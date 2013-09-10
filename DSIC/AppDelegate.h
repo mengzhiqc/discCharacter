@@ -19,4 +19,8 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
+- (NSManagedObjectModel *)managedObjectModel;
+- (NSManagedObjectContext *)managedObjectContext;
+
 @end

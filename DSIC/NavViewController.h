@@ -1,5 +1,5 @@
 //
-//  MainViewController.h
+//  NavViewController.h
 //  DSIC
 //
 //  Created by 孟 智 on 13-8-31.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UITableViewController
+@interface NavViewController : UINavigationController
 
 @end
