@@ -36,6 +36,20 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"ResultViewController"];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"ResultViewController"];
+    
+}
+
+
 - (void) calculateData
 {
     NSMutableArray *always = [[NSMutableArray alloc]init];
@@ -249,7 +263,7 @@
     }
     
     if (abs(d1-d2) >= 3 || abs(i1-i2)>=3 || abs(s1-s2)>=3 || abs(c1-c2)>=3) {
-        [additionWords addObject:@"\t看看本我吧，真实的你的表现可能跟工作中的你表现得不一样，你可能在失意，现在的工作没能给你一个很好发挥你优势的机会；或者在突破，在工作中不停的突破自己本身的一些极限。人生本身就是一个态度，保持积极的心态，如果失意了，跟老板沟通一下，没什么大不了，如果突破，相信你的朋友，你的亲人最愿意看到你的表现，最终要的是，你要相信你自己，未来的你，一定能实现自己心中的梦想。"];
+        [additionWords addObject:@"\t看看本我吧，真实的你的表现可能跟工作中的你表现得不一样，你可能在失意，现在的工作没能给你一个很好发挥你优势的机会；或者在突破，在工作中不停的突破自己本身的一些极限。人生本身就是一个态度，保持积极的心态，如果失意了，跟老板沟通一下，没什么大不了，如果突破，相信你的朋友，你的亲人最愿意看到你的表现，最重要的是，你要相信你自己，未来的你，一定能实现自己心中的梦想。"];
     }
     self.analysisResult = [NSString stringWithFormat:@"%@ %@",[analysisWords componentsJoinedByString:@"\n"],[additionWords componentsJoinedByString:@"\n"]];
     

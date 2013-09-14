@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A09D89317E46C9F00CCC4B6 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A09D89017E46C9F00CCC4B6 /* libMobClickLibrary.a */; };
+		8A09D89617E46D9C00CCC4B6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A09D89517E46D9C00CCC4B6 /* libz.dylib */; };
 		8A4D7F3E17D1524600202CA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4D7F3D17D1524600202CA0 /* Foundation.framework */; };
 		8A4D7F4217D1524600202CA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4D7F4117D1524600202CA0 /* UIKit.framework */; };
 		8A4D7F4417D1524600202CA0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4D7F4317D1524600202CA0 /* CoreData.framework */; };
@@ -51,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A09D89017E46C9F00CCC4B6 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		8A09D89117E46C9F00CCC4B6 /* libMobClickLibrary_armv6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary_armv6.a; sourceTree = "<group>"; };
+		8A09D89217E46C9F00CCC4B6 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		8A09D89517E46D9C00CCC4B6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8A4D7F3A17D1524600202CA0 /* DSIC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSIC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4D7F3D17D1524600202CA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A4D7F3F17D1524600202CA0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -101,9 +107,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A09D89617E46D9C00CCC4B6 /* libz.dylib in Frameworks */,
 				8A4D7FB517D5C66F00202CA0 /* CoreGraphics.framework in Frameworks */,
 				8A4D7F8B17D4B11900202CA0 /* QuartzCore.framework in Frameworks */,
 				8A4D7F4417D1524600202CA0 /* CoreData.framework in Frameworks */,
+				8A09D89317E46C9F00CCC4B6 /* libMobClickLibrary.a in Frameworks */,
 				8A4D7F4217D1524600202CA0 /* UIKit.framework in Frameworks */,
 				8A4D7F3E17D1524600202CA0 /* Foundation.framework in Frameworks */,
 			);
@@ -123,6 +131,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A09D88F17E46C9F00CCC4B6 /* UMAnalytics_Sdk_2.2.1.OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				8A09D89017E46C9F00CCC4B6 /* libMobClickLibrary.a */,
+				8A09D89117E46C9F00CCC4B6 /* libMobClickLibrary_armv6.a */,
+				8A09D89217E46C9F00CCC4B6 /* MobClick.h */,
+			);
+			path = UMAnalytics_Sdk_2.2.1.OpenUDID;
+			sourceTree = "<group>";
+		};
+		8A09D89717E472D900CCC4B6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8A4D7F5417D1524600202CA0 /* Images.xcassets */,
+				8A4D7F5117D1524600202CA0 /* DSIC.xcdatamodeld */,
+				8A4D7F8617D4725800202CA0 /* Discdb.h */,
+				8A4D7F8717D4725800202CA0 /* Discdb.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		8A09D89817E4731200CCC4B6 /* others */ = {
+			isa = PBXGroup;
+			children = (
+				8A09D88F17E46C9F00CCC4B6 /* UMAnalytics_Sdk_2.2.1.OpenUDID */,
+				8A4D7F8217D45D0600202CA0 /* fishhook.c */,
+				8A4D7F8317D45D0600202CA0 /* fishhook.h */,
+				8A4D7F8117D45CE500202CA0 /* QuietAssertMacros.c */,
+			);
+			name = others;
+			sourceTree = "<group>";
+		};
+		8A09D89917E4732C00CCC4B6 /* biz */ = {
+			isa = PBXGroup;
+			children = (
+				8A4D7F7717D1542100202CA0 /* HomeViewController.h */,
+				8A4D7F7817D1542100202CA0 /* HomeViewController.m */,
+				8A4D7F7917D1542100202CA0 /* HomeViewController.xib */,
+				8A4D7F7517D1534F00202CA0 /* NavViewController.h */,
+				8A4D7F7617D1534F00202CA0 /* NavViewController.m */,
+				8A4D7F7C17D43C3B00202CA0 /* QuestionsViewController.h */,
+				8A4D7F7D17D43C3B00202CA0 /* QuestionsViewController.m */,
+				8A4D7F7E17D43C3B00202CA0 /* QuestionsViewController.xib */,
+				8A4D7F8C17D4C4AF00202CA0 /* ResultViewController.h */,
+				8A4D7F8D17D4C4AF00202CA0 /* ResultViewController.m */,
+				8A4D7F8E17D4C4AF00202CA0 /* ResultViewController.xib */,
+				8A4D7F9117D4D4D700202CA0 /* MoreViewController.h */,
+				8A4D7F9217D4D4D700202CA0 /* MoreViewController.m */,
+				8A4D7F9317D4D4D700202CA0 /* MoreViewController.xib */,
+			);
+			name = biz;
+			sourceTree = "<group>";
+		};
 		8A4D7F3117D1524600202CA0 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +206,7 @@
 		8A4D7F3C17D1524600202CA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A09D89517E46D9C00CCC4B6 /* libz.dylib */,
 				8A4D7F8A17D4B11900202CA0 /* QuartzCore.framework */,
 				8A4D7F3D17D1524600202CA0 /* Foundation.framework */,
 				8A4D7F3F17D1524600202CA0 /* CoreGraphics.framework */,
@@ -158,30 +220,12 @@
 		8A4D7F4517D1524600202CA0 /* DSIC */ = {
 			isa = PBXGroup;
 			children = (
-				8A4D7F8217D45D0600202CA0 /* fishhook.c */,
-				8A4D7F8317D45D0600202CA0 /* fishhook.h */,
-				8A4D7F8117D45CE500202CA0 /* QuietAssertMacros.c */,
 				8A4D7F4E17D1524600202CA0 /* AppDelegate.h */,
 				8A4D7F4F17D1524600202CA0 /* AppDelegate.m */,
-				8A4D7F7717D1542100202CA0 /* HomeViewController.h */,
-				8A4D7F7817D1542100202CA0 /* HomeViewController.m */,
-				8A4D7F7917D1542100202CA0 /* HomeViewController.xib */,
-				8A4D7F5417D1524600202CA0 /* Images.xcassets */,
-				8A4D7F5117D1524600202CA0 /* DSIC.xcdatamodeld */,
-				8A4D7F8617D4725800202CA0 /* Discdb.h */,
-				8A4D7F8717D4725800202CA0 /* Discdb.m */,
+				8A09D89917E4732C00CCC4B6 /* biz */,
+				8A09D89817E4731200CCC4B6 /* others */,
+				8A09D89717E472D900CCC4B6 /* model */,
 				8A4D7F4617D1524600202CA0 /* Supporting Files */,
-				8A4D7F7517D1534F00202CA0 /* NavViewController.h */,
-				8A4D7F7617D1534F00202CA0 /* NavViewController.m */,
-				8A4D7F7C17D43C3B00202CA0 /* QuestionsViewController.h */,
-				8A4D7F7D17D43C3B00202CA0 /* QuestionsViewController.m */,
-				8A4D7F7E17D43C3B00202CA0 /* QuestionsViewController.xib */,
-				8A4D7F8C17D4C4AF00202CA0 /* ResultViewController.h */,
-				8A4D7F8D17D4C4AF00202CA0 /* ResultViewController.m */,
-				8A4D7F8E17D4C4AF00202CA0 /* ResultViewController.xib */,
-				8A4D7F9117D4D4D700202CA0 /* MoreViewController.h */,
-				8A4D7F9217D4D4D700202CA0 /* MoreViewController.m */,
-				8A4D7F9317D4D4D700202CA0 /* MoreViewController.xib */,
 			);
 			path = DSIC;
 			sourceTree = "<group>";
@@ -455,6 +499,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSIC/DSIC-Prefix.pch";
 				INFOPLIST_FILE = "DSIC/DSIC-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/kavin/WorkSpace/iOSDeveloper/DSIC/DSIC/UMAnalytics_Sdk_2.2.1.OpenUDID,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -470,6 +518,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSIC/DSIC-Prefix.pch";
 				INFOPLIST_FILE = "DSIC/DSIC-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/kavin/WorkSpace/iOSDeveloper/DSIC/DSIC/UMAnalytics_Sdk_2.2.1.OpenUDID,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

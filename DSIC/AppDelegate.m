@@ -22,7 +22,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
+    [MobClick startWithAppkey:@"523434a656240bb37a0618bf"];
     HomeViewController *rootController = [[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil];
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:rootController];
     self.window.rootViewController = navController;
