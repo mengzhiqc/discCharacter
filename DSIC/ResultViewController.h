@@ -21,6 +21,4 @@
 @property(nonatomic,strong) NSDictionary *result;
 @property(nonatomic,strong) NSDictionary *data;
 
-- (IBAction)findMore:(id)sender;
-
 @end

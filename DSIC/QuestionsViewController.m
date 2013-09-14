@@ -8,20 +8,22 @@
 
 #import "QuestionsViewController.h"
 #import "ResultViewController.h"
+#import "AppDelegate.h"
 #define TAG_BLOCK_WIDTH 10;
 #define LAST_QUESTION 24;
 
 @interface QuestionsViewController ()
 @property(nonatomic) NSInteger questionIndex;
 @property(nonatomic,strong) NSDictionary *dataSource;
-@property(nonatomic,strong) NSMutableDictionary *result;
 @property(nonatomic,strong) UIView *overlay1,*overlay2;
 @property(nonatomic,weak) UIButton *preButton,*nextButton;
 @property(nonatomic,strong) UIView *answerSheetContainer;
+@property(nonatomic,strong) UIBarButtonItem *showResultButton;
+@property(nonatomic) AppDelegate *appDelegate;
 @end
 
 @implementation QuestionsViewController
-@synthesize questionIndex,titleLabel,dataSource,result,overlay1,overlay2,answerSheetContainer;
+@synthesize questionIndex,titleLabel,dataSource,overlay1,overlay2,answerSheetContainer,appDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,11 +38,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    appDelegate = [[UIApplication sharedApplication]delegate];
+
     self.title = @"DISC性格测试";
     [self.view setBackgroundColor:[UIColor colorWithRed:222.0/255.0 green:222.0/255.0 blue:222.0/255.0 alpha:1]];
     questionIndex = 1;
-    result = [[NSMutableDictionary alloc]init];
     dataSource = [self fetchDiscDataSource];
+    [self drawShowResultButton];
     [self drawAnswerSheet];
     [self refreshQuestion:1];
     [self drawNavigationButton];
@@ -68,6 +72,7 @@
         }
     }
     [self fillInDataToAnswerSheet:toShowData];
+    [self drawShowResultButton];
 }
 
 - (void)drawAnswerSheet {
@@ -77,6 +82,7 @@
         [answerSheetLayer setBackgroundColor:[UIColor whiteColor]];
         [[answerSheetLayer layer] setShadowRadius:6];
         [[answerSheetLayer layer] setShadowOffset:CGSizeMake(1, 1)];
+    
         [[answerSheetLayer layer] setShadowOpacity:0.1];
         [[answerSheetLayer layer] setShadowColor:[UIColor whiteColor].CGColor];
         UILabel *label = [[UILabel alloc]initWithFrame:answerSheetLayer.bounds];
@@ -93,6 +99,17 @@
     [self.view addSubview:answerSheetContainer];
 
 }
+
+- (void)drawShowResultButton
+{
+    if (!self.showResultButton  && [[appDelegate result] count] == 24) {
+        self.showResultButton = [[UIBarButtonItem alloc] initWithTitle:@"查看结果" style:UIBarButtonItemStyleBordered target:self action:@selector(completeQuiz:)];
+        self.navigationItem.rightBarButtonItem = self.showResultButton;
+    }
+    
+}
+
+
 
 - (void)fillInDataToAnswerSheet:(NSArray *)data
 {
@@ -116,7 +133,7 @@
         CGPoint point = [recognizer locationInView:recognizer.view];
         NSString *key = [NSString stringWithFormat:@"%d",recognizer.view.tag];
         NSString *questionIndexString = [NSString stringWithFormat:@"%d",questionIndex];
-        NSMutableDictionary *temp = [result objectForKey:questionIndexString];
+        NSMutableDictionary *temp = [appDelegate.result objectForKey:questionIndexString];
         NSMutableDictionary *newDict;
         if (point.x <= 140) {
             CGRect frame = recognizer.view.frame;
@@ -134,7 +151,7 @@
             [temp addEntriesFromDictionary:newDict];
             newDict = temp;
         }
-        [result setObject:newDict forKey:questionIndexString];
+        [appDelegate.result setObject:newDict forKey:questionIndexString];
        
     }
 }
@@ -209,7 +226,6 @@
 {
     int lastQuestion = LAST_QUESTION;
     int showCompleteInt = lastQuestion -1 ;
-    NSLog(@"overlay1:%@,\n overlay2:%@",overlay1,overlay2);
     if (overlay1.frame.size.width == 0) {
         [[[UIAlertView alloc]initWithTitle:@"提示" message:@"你必须选择一项常有的行为" delegate:Nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil, nil] show];
         return;
@@ -252,16 +268,14 @@
     [overlay1 setFrame:CGRectMake(0, 0, 0, 0)];
     [overlay2 setFrame:CGRectMake(0, 0, 0, 0)];
 
-    NSLog(@"result:%@",result);
     
     [self refreshQuestion:questionIndex];
 }
 
 - (void)completeQuiz:(id)sender
 {
-    NSLog(@"I've complete the quiz");
     ResultViewController *resultController = [[ResultViewController alloc]initWithNibName:@"ResultViewController" bundle:Nil];
-    [resultController setResult:result];
+    [resultController setResult:appDelegate.result];
     [resultController setData:dataSource];
     [self.navigationController pushViewController:resultController animated:YES];
     

@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+#import "HomeViewController.h"
+
 
 
 @implementation AppDelegate
@@ -15,15 +16,46 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize result = _result;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    MainViewController *rootController = [[MainViewController alloc]initWithNibName:@"MainViewController" bundle:nil];
+    HomeViewController *rootController = [[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil];
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:rootController];
     self.window.rootViewController = navController;
+    
+    self.result = [[NSMutableDictionary alloc]init];
+//    NSDictionary *testData = @{
+//        @"1":@{@"always":@"103",@"noalways":@"104"},
+//        @"10":@{@"always":@"1001",@"noalways":@"1004"},
+//        @"11":@{@"always":@"1101",@"noalways":@"1104"},
+//        @"12":@{@"always":@"1201",@"noalways":@"1204"},
+//        @"13":@{@"always":@"1301",@"noalways":@"1304"},
+//        @"14":@{@"always":@"1401",@"noalways":@"1404"},
+//        @"15":@{@"always":@"1501",@"noalways":@"1504"},
+//        @"16":@{@"always":@"1601",@"noalways":@"1604"},
+//        @"17":@{@"always":@"1701",@"noalways":@"1704"},
+//        @"18":@{@"always":@"1801",@"noalways":@"1804"},
+//        @"19":@{@"always":@"1901",@"noalways":@"1904"},
+//        @"2":@{@"always":@"201",@"noalways":@"204"},
+//        @"20":@{@"always":@"2001",@"noalways":@"2004"},
+//        @"21":@{@"always":@"2101",@"noalways":@"2104"},
+//        @"22":@{@"always":@"2201",@"noalways":@"2204"},
+//        @"23":@{@"always":@"2301",@"noalways":@"2304"},
+//        @"24":@{@"always":@"2401",@"noalways":@"2404"},
+//        @"3":@{@"always":@"301",@"noalways":@"304"},
+//        @"4":@{@"always":@"401",@"noalways":@"404"},
+//        @"5":@{@"always":@"501",@"noalways":@"504"},
+//        @"6":@{@"always":@"601",@"noalways":@"604"},
+//        @"7":@{@"always":@"701",@"noalways":@"704"},
+//        @"8":@{@"always":@"801",@"noalways":@"804"},
+//        @"9":@{@"always":@"901",@"noalways":@"904"},
+//                    };
+//    self.result = [NSMutableDictionary dictionaryWithDictionary:testData];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -151,5 +183,7 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+
 
 @end
