@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ResultViewController : UIViewController
+@interface LSResultViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *d1;
 @property (weak, nonatomic) IBOutlet UILabel *i1;
 @property (weak, nonatomic) IBOutlet UILabel *s1;

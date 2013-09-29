@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoreViewController : UIViewController
+@interface LSMoreViewController : UIViewController
 @property(nonatomic,retain) NSString *result;
 @end

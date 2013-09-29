@@ -6,12 +6,12 @@
 //  Copyright (c) 2013年 孟 智. All rights reserved.
 //
 
-#import "AppDelegate.h"
-#import "HomeViewController.h"
+#import "LSAppDelegate.h"
+#import "LSHomeViewController.h"
+static NSString *FIRST_LAUNCH_TAG = @"firstNotLaunch";
 
 
-
-@implementation AppDelegate
+@implementation LSAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -23,42 +23,119 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     [MobClick startWithAppkey:@"523434a656240bb37a0618bf"];
-    HomeViewController *rootController = [[HomeViewController alloc]initWithNibName:@"HomeViewController" bundle:nil];
-    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:rootController];
-    self.window.rootViewController = navController;
+    
+    BOOL isNotFirstTime = [[NSUserDefaults standardUserDefaults] boolForKey:FIRST_LAUNCH_TAG];
+#ifdef DEBUG
+    isNotFirstTime = NO;
+#endif
+    if (isNotFirstTime) {
+        UINavigationController *navController = [self createNavigationController];
+        self.window.rootViewController = navController;
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:FIRST_LAUNCH_TAG];
+        [self createICETutorial];
+    }
     
     self.result = [[NSMutableDictionary alloc]init];
-//    NSDictionary *testData = @{
-//        @"1":@{@"always":@"103",@"noalways":@"104"},
-//        @"10":@{@"always":@"1001",@"noalways":@"1004"},
-//        @"11":@{@"always":@"1101",@"noalways":@"1104"},
-//        @"12":@{@"always":@"1201",@"noalways":@"1204"},
-//        @"13":@{@"always":@"1301",@"noalways":@"1304"},
-//        @"14":@{@"always":@"1401",@"noalways":@"1404"},
-//        @"15":@{@"always":@"1501",@"noalways":@"1504"},
-//        @"16":@{@"always":@"1601",@"noalways":@"1604"},
-//        @"17":@{@"always":@"1701",@"noalways":@"1704"},
-//        @"18":@{@"always":@"1801",@"noalways":@"1804"},
-//        @"19":@{@"always":@"1901",@"noalways":@"1904"},
-//        @"2":@{@"always":@"201",@"noalways":@"204"},
-//        @"20":@{@"always":@"2001",@"noalways":@"2004"},
-//        @"21":@{@"always":@"2101",@"noalways":@"2104"},
-//        @"22":@{@"always":@"2201",@"noalways":@"2204"},
-//        @"23":@{@"always":@"2301",@"noalways":@"2304"},
-//        @"24":@{@"always":@"2401",@"noalways":@"2404"},
-//        @"3":@{@"always":@"301",@"noalways":@"304"},
-//        @"4":@{@"always":@"401",@"noalways":@"404"},
-//        @"5":@{@"always":@"501",@"noalways":@"504"},
-//        @"6":@{@"always":@"601",@"noalways":@"604"},
-//        @"7":@{@"always":@"701",@"noalways":@"704"},
-//        @"8":@{@"always":@"801",@"noalways":@"804"},
-//        @"9":@{@"always":@"901",@"noalways":@"904"},
-//                    };
-//    self.result = [NSMutableDictionary dictionaryWithDictionary:testData];
-    
+#ifdef DEBUG
+    NSDictionary *testData = @{
+        @"1":@{@"always":@"103",@"noalways":@"104"},
+        @"10":@{@"always":@"1001",@"noalways":@"1004"},
+        @"11":@{@"always":@"1101",@"noalways":@"1104"},
+        @"12":@{@"always":@"1201",@"noalways":@"1204"},
+        @"13":@{@"always":@"1301",@"noalways":@"1304"},
+        @"14":@{@"always":@"1401",@"noalways":@"1404"},
+        @"15":@{@"always":@"1501",@"noalways":@"1504"},
+        @"16":@{@"always":@"1601",@"noalways":@"1604"},
+        @"17":@{@"always":@"1701",@"noalways":@"1704"},
+        @"18":@{@"always":@"1801",@"noalways":@"1804"},
+        @"19":@{@"always":@"1901",@"noalways":@"1904"},
+        @"2":@{@"always":@"201",@"noalways":@"204"},
+        @"20":@{@"always":@"2001",@"noalways":@"2004"},
+        @"21":@{@"always":@"2101",@"noalways":@"2104"},
+        @"22":@{@"always":@"2201",@"noalways":@"2204"},
+        @"23":@{@"always":@"2301",@"noalways":@"2304"},
+        @"24":@{@"always":@"2401",@"noalways":@"2404"},
+        @"3":@{@"always":@"301",@"noalways":@"304"},
+        @"4":@{@"always":@"401",@"noalways":@"404"},
+        @"5":@{@"always":@"501",@"noalways":@"504"},
+        @"6":@{@"always":@"601",@"noalways":@"604"},
+        @"7":@{@"always":@"701",@"noalways":@"704"},
+        @"8":@{@"always":@"801",@"noalways":@"804"},
+        @"9":@{@"always":@"901",@"noalways":@"904"},
+                    };
+    self.result = [NSMutableDictionary dictionaryWithDictionary:testData];
+#endif
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (UINavigationController *)createNavigationController
+{
+    LSHomeViewController *rootController = [[LSHomeViewController alloc]initWithNibName:@"LSHomeViewController" bundle:nil];
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:rootController];
+    return navController;
+}
+
+- (void)createICETutorial
+{
+    // Init the pages texts, and pictures.
+    ICETutorialPage *layer1 = [[ICETutorialPage alloc] initWithSubTitle:@""
+                                                            description:@""
+                                                            pictureName:@"background-1739@2x.png"];
+    ICETutorialPage *layer2 = [[ICETutorialPage alloc] initWithSubTitle:@""
+                                                            description:@""
+                                                            pictureName:@"background-1740@2x.png"];
+    ICETutorialPage *layer3 = [[ICETutorialPage alloc] initWithSubTitle:@""
+                                                            description:@""
+                                                            pictureName:@"background-1741@2x.png"];
+    
+    // Set the common style for SubTitles and Description (can be overrided on each page).
+    ICETutorialLabelStyle *subStyle = [[ICETutorialLabelStyle alloc] init];
+    [subStyle setFont:TUTORIAL_SUB_TITLE_FONT];
+    [subStyle setTextColor:TUTORIAL_LABEL_TEXT_COLOR];
+    [subStyle setLinesNumber:TUTORIAL_SUB_TITLE_LINES_NUMBER];
+    [subStyle setOffset:TUTORIAL_SUB_TITLE_OFFSET];
+    
+    ICETutorialLabelStyle *descStyle = [[ICETutorialLabelStyle alloc] init];
+    [descStyle setFont:TUTORIAL_DESC_FONT];
+    [descStyle setTextColor:TUTORIAL_LABEL_TEXT_COLOR];
+    [descStyle setLinesNumber:TUTORIAL_DESC_LINES_NUMBER];
+    [descStyle setOffset:TUTORIAL_DESC_OFFSET];
+    
+    // Load into an array.
+    NSArray *tutorialLayers = @[layer1,layer2,layer3];
+    
+    // Override point for customization after application launch.
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.viewController = [[ICETutorialController alloc] initWithNibName:@"ICETutorialController_iPhone"
+                                                                      bundle:nil
+                                                                    andPages:tutorialLayers];
+    } else {
+        self.viewController = [[ICETutorialController alloc] initWithNibName:@"ICETutorialController_iPad"
+                                                                      bundle:nil
+                                                                    andPages:tutorialLayers];
+    }
+    
+    // Set the common styles, and start scrolling (auto scroll, and looping enabled by default)
+    [self.viewController setCommonPageSubTitleStyle:subStyle];
+    [self.viewController setCommonPageDescriptionStyle:descStyle];
+    
+    // Set button 1 action.
+    [self.viewController setButton1Block:^(UIButton *button){
+        NSLog(@"Button 1 pressed.");
+    }];
+    
+    // Set button 2 action, stop the scrolling.
+    __unsafe_unretained typeof(self) weakSelf = self;
+    [self.viewController setButton2Block:^(UIButton *button){
+        NSLog(@"Button 2 pressed.");
+        NSLog(@"Auto-scrolling stopped.");
+        
+        [weakSelf.viewController stopScrolling];
+    }];
+    self.window.rootViewController = self.viewController;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

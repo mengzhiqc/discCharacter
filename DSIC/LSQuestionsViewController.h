@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface QuestionsViewController : UIViewController
+@interface LSQuestionsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

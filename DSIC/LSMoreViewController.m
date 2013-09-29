@@ -6,19 +6,20 @@
 //  Copyright (c) 2013年 孟 智. All rights reserved.
 //
 
-#import "MoreViewController.h"
-
-@interface MoreViewController ()
+#import "LSMoreViewController.h"
+#import "LSImageUtil.h"
+@interface LSMoreViewController ()
 
 @end
 
-@implementation MoreViewController
+@implementation LSMoreViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"结果";
     }
     return self;
 }
@@ -27,9 +28,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    //UIFont *dataFont = [UIFont fontWithName:@"Helvetica" size:14];
-    //CGSize dataStringSize = [self.result sizeWithFont:dataFont constrainedToSize:CGSizeMake(300,9999) lineBreakMode:NSLineBreakByWordWrapping];
-    //CGRect dataFrame = CGRectMake(10, 10, 300, dataStringSize.height);
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[LSImageUtil scaleImage:[UIImage imageNamed:@"disc-result-background.png"] toScale:0.5]]];
+
+    
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:14],NSFontAttributeName,[NSParagraphStyle defaultParagraphStyle],NSParagraphStyleAttributeName, nil];
     
     CGRect dataFrame = [self.result boundingRectWithSize:CGSizeMake(300, 1000) options:NSLineBreakByWordWrapping|NSStringDrawingUsesLineFragmentOrigin  attributes:attributes context:nil];
@@ -39,6 +40,7 @@
     UILabel *label = [[UILabel alloc]initWithFrame:dataFrame];
 
     [label setText:self.result];
+    [label setTextColor:[UIColor whiteColor]];
     label.lineBreakMode = NSLineBreakByWordWrapping;
     label.numberOfLines = 0;
     UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:self.view.frame];
@@ -50,13 +52,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [MobClick beginLogPageView:@"MoreViewController"];
+    [MobClick beginLogPageView:@"LSMoreViewController"];
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [MobClick endLogPageView:@"MoreViewController"];
+    [MobClick endLogPageView:@"LSMoreViewController"];
     
 }
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface HomeViewController : UIViewController
+@interface LSHomeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *enterButton;
 - (IBAction)enterAction:(id)sender;
 

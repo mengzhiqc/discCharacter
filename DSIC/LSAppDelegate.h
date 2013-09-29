@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ICETutorialPage.h"
+#import "ICETutorialController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@interface LSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -16,6 +19,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic,strong) NSMutableDictionary *result;
+@property (nonatomic,strong) ICETutorialController *viewController;
 
 
 - (void)saveContext;

@@ -6,23 +6,23 @@
 //  Copyright (c) 2013年 孟 智. All rights reserved.
 //
 
-#import "QuestionsViewController.h"
-#import "ResultViewController.h"
-#import "AppDelegate.h"
+#import "LSQuestionsViewController.h"
+#import "LSResultViewController.h"
+#import "LSAppDelegate.h"
 #define TAG_BLOCK_WIDTH 10;
 #define LAST_QUESTION 24;
 
-@interface QuestionsViewController ()
+@interface LSQuestionsViewController ()
 @property(nonatomic) NSInteger questionIndex;
 @property(nonatomic,strong) NSDictionary *dataSource;
 @property(nonatomic,strong) UIView *overlay1,*overlay2;
 @property(nonatomic,weak) UIButton *preButton,*nextButton;
 @property(nonatomic,strong) UIView *answerSheetContainer;
 @property(nonatomic,strong) UIBarButtonItem *showResultButton;
-@property(nonatomic) AppDelegate *appDelegate;
+@property(nonatomic) LSAppDelegate *appDelegate;
 @end
 
-@implementation QuestionsViewController
+@implementation LSQuestionsViewController
 @synthesize questionIndex,titleLabel,dataSource,overlay1,overlay2,answerSheetContainer,appDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,18 +37,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setup];
     // Do any additional setup after loading the view from its nib.
     appDelegate = [[UIApplication sharedApplication]delegate];
 
-    self.title = @"DISC性格测试";
-    [self.view setBackgroundColor:[UIColor colorWithRed:222.0/255.0 green:222.0/255.0 blue:222.0/255.0 alpha:1]];
+    self.title = @"性格测试";
     questionIndex = 1;
     dataSource = [self fetchDiscDataSource];
     [self drawShowResultButton];
     [self drawAnswerSheet];
     [self refreshQuestion:1];
-    [self drawNavigationButton];
+    [self drawNextQuestionButton];
 
+}
+
+- (void)setup
+{
+    CGRect frame = self.view.frame;
+    frame.size.width /= 2;
+    frame.origin.y = self.navigationController.navigationBar.frame.size.height;
+
+    CGRect frame2 = frame;
+    frame2.origin.x = frame.size.width;
+    
+    UIView *leftBackgroundView = [[UIView alloc]initWithFrame:frame];
+    [leftBackgroundView setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:0.5f]];
+    [self.view addSubview:leftBackgroundView];
+    
+    UIView *rightBackgroundView = [[UIView alloc]initWithFrame:frame2];
+    [rightBackgroundView setBackgroundColor:[UIColor colorWithRed:0.8f green:0.8f blue:0.8f alpha:0.5f]];
+    [self.view addSubview:rightBackgroundView];
+    
+    //redraw question title label
+    [titleLabel setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:1]];
+    [titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
+    [titleLabel setTextColor:[UIColor whiteColor]];
+    [titleLabel setTextAlignment:NSTextAlignmentCenter];
+    
+    overlay1 = [[UIView alloc]init];
+    overlay2 = [[UIView alloc]init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -70,6 +97,8 @@
     if (questionIndex) {
         titleLabel.text = [NSString stringWithFormat:@"共24题，当前是第%d题",questionIndex];
     }
+    
+
     NSMutableArray *toShowData = [[NSMutableArray alloc]init] ;
 
     for (id key in dataSource) {
@@ -79,6 +108,8 @@
             [toShowData addObject:item];
         }
     }
+    [overlay1 removeFromSuperview];
+    [overlay2 removeFromSuperview];
     [self fillInDataToAnswerSheet:toShowData];
     [self drawShowResultButton];
 }
@@ -146,86 +177,67 @@
         if (point.x <= 140) {
             CGRect frame = recognizer.view.frame;
             frame.size.width = frame.size.width/2;
-            [self drawOverLayInFrame:frame parentView:recognizer.view type:1];
-            newDict = [NSMutableDictionary dictionaryWithObject:key forKey:@"always"];
+            if ((overlay2 == nil)  ||  (overlay2 != nil && overlay2.superview != recognizer.view)) {
+                [self drawOverLayInFrame:frame parentView:recognizer.view type:1];
+                newDict = [NSMutableDictionary dictionaryWithObject:key forKey:@"always"];
+            }
+            
         }else{
             CGRect frame = recognizer.view.frame;
             frame.size.width = frame.size.width/2;
             frame.origin.x = frame.origin.x + frame.size.width;
-            [self drawOverLayInFrame:frame parentView:recognizer.view type:2];
-            newDict = [NSMutableDictionary dictionaryWithObject:key forKey:@"noalways"];
+            if ((overlay1 == nil)  ||  (overlay1 != nil && overlay1.superview != recognizer.view)) {
+                [self drawOverLayInFrame:frame parentView:recognizer.view type:2];
+                newDict = [NSMutableDictionary dictionaryWithObject:key forKey:@"noalways"];
+            }
         }
-        if (temp) {
-            [temp addEntriesFromDictionary:newDict];
-            newDict = temp;
+        if (newDict) {
+            if (temp) {
+                [temp addEntriesFromDictionary:newDict];
+                newDict = temp;
+            }
+            [appDelegate.result setObject:newDict forKey:questionIndexString];
         }
-        [appDelegate.result setObject:newDict forKey:questionIndexString];
-       
     }
 }
 
-- (void) drawNavigationButton
+- (void) drawNextQuestionButton
 {
-    UIView *navigationButtonBackground;
-    if (self.view.frame.size.height > 600) {
-        navigationButtonBackground = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.origin.x+20,self.view.frame.size.height-90, 280, 50)];
-    }else{
-        navigationButtonBackground = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.origin.x+20,self.view.frame.size.height-130, 280, 50)];
-    }
-    [navigationButtonBackground setBackgroundColor:[UIColor grayColor]];
-
-    UIButton *preButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [preButton setFrame:CGRectMake(0, 0, navigationButtonBackground.frame.size.width/2, navigationButtonBackground.frame.size.height)];
-    [preButton setTag:900];
-    [preButton setTitle:@"上一题" forState:UIControlStateNormal];
-    [preButton setBackgroundColor:[UIColor grayColor]];
-    [preButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [preButton addTarget:self action:@selector(clickNaviButton:) forControlEvents:UIControlEventTouchDown];
-    //[navigationButtonBackground addSubview:preButton];
-    
-   
     UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [nextButton setFrame:CGRectMake(0, 0, navigationButtonBackground.frame.size.width, navigationButtonBackground.frame.size.height)];
+    [nextButton setFrame:CGRectMake(self.view.frame.origin.x+20,self.view.frame.size.height-self.navigationController.navigationBar.frame.size.height-90, 280, 50)];
     [nextButton setTag:901];
     [nextButton setTitle:@"下一题" forState:UIControlStateNormal];
-    [nextButton setBackgroundColor:[UIColor greenColor]];
+    [nextButton setBackgroundColor:[UIColor colorWithRed:1.0f green:0.8f blue:0.0f alpha:1.0f]];
+    [nextButton layer].cornerRadius = 5.0f;
+    [[nextButton layer] setShadowOffset:CGSizeMake(1, 1)];
+    [[nextButton layer] setShadowRadius:6];
+    [[nextButton layer] setShadowOpacity:0.2];
+    [[nextButton layer] setShadowColor:[UIColor blackColor].CGColor];
+    
     [nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [nextButton addTarget:self action:@selector(clickNaviButton:) forControlEvents:UIControlEventTouchDown];
-    [navigationButtonBackground addSubview:nextButton];
-    [self.view addSubview:navigationButtonBackground];
+    [self.view addSubview:nextButton];
 }
 
 - (void) drawOverLayInFrame:(CGRect) frame parentView:(UIView *)parentView type:(int)type
 {
     if (type == 1) {
-        if (! overlay1) {
-            overlay1 = [[UIView alloc]init];
-            [[overlay1 layer] setShadowOffset:CGSizeMake(1, 1)];
-            [[overlay1 layer] setShadowRadius:6];
-            [[overlay1 layer] setShadowOpacity:1];
-            [[overlay1 layer] setShadowColor:[UIColor blueColor].CGColor];
-            [overlay1 setBackgroundColor:[UIColor grayColor]];
-            [overlay1 setAlpha:0.5];
-        }
-        frame.size.width = TAG_BLOCK_WIDTH;
+        [overlay1 removeFromSuperview];
+        [overlay1 setAlpha:1.0];
+        frame.origin.y = frame.size.height-2.0f;
+        frame.size.height = 2.0f;
         [overlay1 setFrame:frame];
-        
+        [overlay1 setBackgroundColor:[UIColor colorWithRed:0.8f green:0.1f blue:0.1f alpha:1.0f]];
         [parentView addSubview:overlay1];
     } else {
-    if (! overlay2) {
-        overlay2 = [[UIView alloc]init];
-        [[overlay2 layer] setShadowOffset:CGSizeMake(1, 1)];
-        [[overlay2 layer] setShadowRadius:6];
-        [[overlay2 layer] setShadowOpacity:1];
-        [[overlay2 layer] setShadowColor:[UIColor blueColor].CGColor];
-        [overlay2 setBackgroundColor:[UIColor greenColor]];
-        [overlay2 setAlpha:0.5];
-    }
-    frame.origin.x = frame.origin.x + frame.size.width-TAG_BLOCK_WIDTH;
-    frame.size.width = TAG_BLOCK_WIDTH;
-    [overlay2 setFrame:frame];
-
-    [parentView addSubview:overlay2];
+        [overlay2 removeFromSuperview];
+        [overlay2 setAlpha:1.0];
+        frame.origin.x = frame.origin.x;
+        frame.origin.y = frame.size.height-2.0f;
+        frame.size.height = 2.0f;
+        [overlay2 setFrame:frame];
+        [overlay2 setBackgroundColor:[UIColor colorWithRed:0.8f green:0.5f blue:0.1f alpha:1.0f]];
+        [parentView addSubview:overlay2];
     }
 }
 
@@ -282,7 +294,7 @@
 
 - (void)completeQuiz:(id)sender
 {
-    ResultViewController *resultController = [[ResultViewController alloc]initWithNibName:@"ResultViewController" bundle:Nil];
+    LSResultViewController *resultController = [[LSResultViewController alloc]initWithNibName:@"LSResultViewController" bundle:Nil];
     [resultController setResult:appDelegate.result];
     [resultController setData:dataSource];
     [self.navigationController pushViewController:resultController animated:YES];
