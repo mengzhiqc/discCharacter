@@ -47,6 +47,10 @@
 		8A568F3B17F7B212009FDCB4 /* background-gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A568F3917F7B212009FDCB4 /* background-gradient@2x.png */; };
 		8A568F3E17F7BD51009FDCB4 /* ICETutorialController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A568F3D17F7BD51009FDCB4 /* ICETutorialController_iPad.xib */; };
 		8A568F4017F7BE43009FDCB4 /* ICETutorialController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A568F3F17F7BE43009FDCB4 /* ICETutorialController_iPhone.xib */; };
+		8A568F4E17F7C441009FDCB4 /* aboutUs.html in Resources */ = {isa = PBXBuildFile; fileRef = 8A568F4D17F7C441009FDCB4 /* aboutUs.html */; };
+		8A568F5217F7C45A009FDCB4 /* LSAboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A568F5017F7C45A009FDCB4 /* LSAboutAppViewController.m */; };
+		8A568F5317F7C45A009FDCB4 /* LSAboutAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A568F5117F7C45A009FDCB4 /* LSAboutAppViewController.xib */; };
+		8A568F5517F7CE33009FDCB4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A568F5417F7CE33009FDCB4 /* StoreKit.framework */; };
 		8AC97FAB17D5CE430051B184 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC97FAA17D5CE430051B184 /* Default.png */; };
 		8AC97FAD17D5CE560051B184 /* Defalult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC97FAC17D5CE560051B184 /* Defalult@2x.png */; };
 		8AC97FAF17D5CE8C0051B184 /* discbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC97FAE17D5CE8C0051B184 /* discbg.png */; };
@@ -118,6 +122,11 @@
 		8A568F3917F7B212009FDCB4 /* background-gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-gradient@2x.png"; sourceTree = "<group>"; };
 		8A568F3D17F7BD51009FDCB4 /* ICETutorialController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ICETutorialController_iPad.xib; sourceTree = "<group>"; };
 		8A568F3F17F7BE43009FDCB4 /* ICETutorialController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ICETutorialController_iPhone.xib; sourceTree = "<group>"; };
+		8A568F4D17F7C441009FDCB4 /* aboutUs.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = aboutUs.html; sourceTree = "<group>"; };
+		8A568F4F17F7C45A009FDCB4 /* LSAboutAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAboutAppViewController.h; sourceTree = "<group>"; };
+		8A568F5017F7C45A009FDCB4 /* LSAboutAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAboutAppViewController.m; sourceTree = "<group>"; };
+		8A568F5117F7C45A009FDCB4 /* LSAboutAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSAboutAppViewController.xib; sourceTree = "<group>"; };
+		8A568F5417F7CE33009FDCB4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8AC97FAA17D5CE430051B184 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8AC97FAC17D5CE560051B184 /* Defalult@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Defalult@2x.png"; sourceTree = "<group>"; };
 		8AC97FAE17D5CE8C0051B184 /* discbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discbg.png; sourceTree = "<group>"; };
@@ -129,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A568F5517F7CE33009FDCB4 /* StoreKit.framework in Frameworks */,
 				8A09D89617E46D9C00CCC4B6 /* libz.dylib in Frameworks */,
 				8A4D7FB517D5C66F00202CA0 /* CoreGraphics.framework in Frameworks */,
 				8A4D7F8B17D4B11900202CA0 /* QuartzCore.framework in Frameworks */,
@@ -179,19 +189,29 @@
 			children = (
 				8A568E8D17F69DB2009FDCB4 /* LSHomeViewController.h */,
 				8A568E8E17F69DB2009FDCB4 /* LSHomeViewController.m */,
-				8A568E8F17F69DB2009FDCB4 /* LSHomeViewController.xib */,
 				8A4D7F7C17D43C3B00202CA0 /* LSQuestionsViewController.h */,
 				8A4D7F7D17D43C3B00202CA0 /* LSQuestionsViewController.m */,
-				8A4D7F7E17D43C3B00202CA0 /* LSQuestionsViewController.xib */,
 				8A4D7F8C17D4C4AF00202CA0 /* LSResultViewController.h */,
 				8A4D7F8D17D4C4AF00202CA0 /* LSResultViewController.m */,
-				8A4D7F8E17D4C4AF00202CA0 /* LSResultViewController.xib */,
 				8A4D7F9117D4D4D700202CA0 /* LSMoreViewController.h */,
 				8A4D7F9217D4D4D700202CA0 /* LSMoreViewController.m */,
-				8A4D7F9317D4D4D700202CA0 /* LSMoreViewController.xib */,
+				8A568F4F17F7C45A009FDCB4 /* LSAboutAppViewController.h */,
+				8A568F5017F7C45A009FDCB4 /* LSAboutAppViewController.m */,
 				8A568E8A17F6443C009FDCB4 /* component */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		8A0A44E918085D55008D385D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8A568E8F17F69DB2009FDCB4 /* LSHomeViewController.xib */,
+				8A4D7F7E17D43C3B00202CA0 /* LSQuestionsViewController.xib */,
+				8A4D7F8E17D4C4AF00202CA0 /* LSResultViewController.xib */,
+				8A4D7F9317D4D4D700202CA0 /* LSMoreViewController.xib */,
+				8A568F5117F7C45A009FDCB4 /* LSAboutAppViewController.xib */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 		8A4D7F3117D1524600202CA0 = {
@@ -216,6 +236,7 @@
 		8A4D7F3C17D1524600202CA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A568F5417F7CE33009FDCB4 /* StoreKit.framework */,
 				8A09D89517E46D9C00CCC4B6 /* libz.dylib */,
 				8A4D7F8A17D4B11900202CA0 /* QuartzCore.framework */,
 				8A4D7F3D17D1524600202CA0 /* Foundation.framework */,
@@ -230,6 +251,7 @@
 		8A4D7F4517D1524600202CA0 /* DSIC */ = {
 			isa = PBXGroup;
 			children = (
+				8A0A44E918085D55008D385D /* view */,
 				8A4D7F4E17D1524600202CA0 /* LSAppDelegate.h */,
 				8A4D7F4F17D1524600202CA0 /* LSAppDelegate.m */,
 				8A09D89917E4732C00CCC4B6 /* controller */,
@@ -304,6 +326,7 @@
 		8A568F3C17F7B6C9009FDCB4 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				8A568F4D17F7C441009FDCB4 /* aboutUs.html */,
 				8A4D7F8817D473A900202CA0 /* dsicList.plist */,
 				8A568F3817F7B212009FDCB4 /* background-gradient.png */,
 				8A568F3917F7B212009FDCB4 /* background-gradient@2x.png */,
@@ -409,10 +432,12 @@
 				8AC97FAF17D5CE8C0051B184 /* discbg.png in Resources */,
 				8A568F3517F7A4BC009FDCB4 /* background-1739@2x.png in Resources */,
 				8AC97FB117D5CF800051B184 /* discbutton.png in Resources */,
+				8A568F5317F7C45A009FDCB4 /* LSAboutAppViewController.xib in Resources */,
 				8A568F3B17F7B212009FDCB4 /* background-gradient@2x.png in Resources */,
 				8A4D7F8917D473A900202CA0 /* dsicList.plist in Resources */,
 				8A568F3717F7A4BC009FDCB4 /* background-1741@2x.png in Resources */,
 				8A568E9117F69DB2009FDCB4 /* LSHomeViewController.xib in Resources */,
+				8A568F4E17F7C441009FDCB4 /* aboutUs.html in Resources */,
 				8A4D7F9517D4D4D700202CA0 /* LSMoreViewController.xib in Resources */,
 				8A568F3E17F7BD51009FDCB4 /* ICETutorialController_iPad.xib in Resources */,
 				8A568F3017F79B80009FDCB4 /* button-background.png in Resources */,
@@ -444,6 +469,7 @@
 				8A4D7F5017D1524600202CA0 /* LSAppDelegate.m in Sources */,
 				8A568F2217F79512009FDCB4 /* ICETutorialController.m in Sources */,
 				8A4D7F7F17D440D900202CA0 /* LSQuestionsViewController.m in Sources */,
+				8A568F5217F7C45A009FDCB4 /* LSAboutAppViewController.m in Sources */,
 				8A4D7F4C17D1524600202CA0 /* main.m in Sources */,
 				8A4D7F5317D1524600202CA0 /* DSIC.xcdatamodeld in Sources */,
 				8A4D7F9417D4D4D700202CA0 /* LSMoreViewController.m in Sources */,

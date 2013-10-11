@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1552</int>
+		<int key="IBDocument.SystemTarget">1792</int>
 		<string key="IBDocument.SystemVersion">12F37</string>
 		<string key="IBDocument.InterfaceBuilderVersion">4510</string>
 		<string key="IBDocument.AppKitVersion">1187.39</string>
@@ -140,7 +140,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUINormalTitleColor" ref="218759810"/>
 						<reference key="IBUIHighlightedTitleColor" ref="218759810"/>
-						<string key="IBUINormalTitle">Button 1</string>
+						<string key="IBUINormalTitle">关于我们</string>
 						<object class="NSColor" key="IBUINormalTitleShadowColor" id="425511417">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
@@ -171,7 +171,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUINormalTitleColor" ref="218759810"/>
 						<reference key="IBUIHighlightedTitleColor" ref="218759810"/>
-						<string key="IBUINormalTitle">Button 2</string>
+						<string key="IBUINormalTitle">开启旅程</string>
 						<reference key="IBUINormalTitleShadowColor" ref="425511417"/>
 						<reference key="IBUINormalBackgroundImage" ref="665313231"/>
 						<reference key="IBUIFontDescription" ref="1041599026"/>
@@ -1056,7 +1056,7 @@
 		<bool key="IBDocument.previouslyAttemptedUpgradeToXcode5">YES</bool>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1552" key="NS.object.0"/>
+			<real value="1792" key="NS.object.0"/>
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.InterfaceBuilder3</string>

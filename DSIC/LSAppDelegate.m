@@ -8,6 +8,7 @@
 
 #import "LSAppDelegate.h"
 #import "LSHomeViewController.h"
+#import "LSAboutAppViewController.h"
 static NSString *FIRST_LAUNCH_TAG = @"firstNotLaunch";
 
 
@@ -123,17 +124,15 @@ static NSString *FIRST_LAUNCH_TAG = @"firstNotLaunch";
     [self.viewController setCommonPageDescriptionStyle:descStyle];
     
     // Set button 1 action.
+    __unsafe_unretained typeof(self) weakSelf = self;
     [self.viewController setButton1Block:^(UIButton *button){
-        NSLog(@"Button 1 pressed.");
+        LSAboutAppViewController *aboutApp = [[LSAboutAppViewController alloc]initWithNibName:@"LSAboutAppViewController" bundle:nil];
+        [weakSelf.viewController presentViewController:aboutApp animated:YES completion:nil];
     }];
     
     // Set button 2 action, stop the scrolling.
-    __unsafe_unretained typeof(self) weakSelf = self;
     [self.viewController setButton2Block:^(UIButton *button){
-        NSLog(@"Button 2 pressed.");
-        NSLog(@"Auto-scrolling stopped.");
-        
-        [weakSelf.viewController stopScrolling];
+        [weakSelf.viewController presentViewController:[weakSelf createNavigationController] animated:YES completion:nil];
     }];
     self.window.rootViewController = self.viewController;
 }
