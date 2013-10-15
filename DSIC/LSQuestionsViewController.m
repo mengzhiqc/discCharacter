@@ -9,6 +9,7 @@
 #import "LSQuestionsViewController.h"
 #import "LSResultViewController.h"
 #import "LSAppDelegate.h"
+#import "AnswerSheetView.h"
 #define TAG_BLOCK_WIDTH 10;
 #define LAST_QUESTION 24;
 
@@ -42,12 +43,14 @@
     appDelegate = [[UIApplication sharedApplication]delegate];
 
     self.title = @"性格测试";
-    questionIndex = 1;
-    dataSource = [self fetchDiscDataSource];
-    [self drawShowResultButton];
-    [self drawAnswerSheet];
-    [self refreshQuestion:1];
-    [self drawNextQuestionButton];
+    AnswerSheetView *answerSheet = [[AnswerSheetView alloc]initWithTitle:@"这是标题" withDataSource:[self fetchDiscDataSource] withFrame:self.view.frame];
+    [self.view addSubview:answerSheet];
+//    questionIndex = 1;
+//    dataSource = [self fetchDiscDataSource];
+//    [self drawShowResultButton];
+//    [self drawAnswerSheet];
+//    [self refreshQuestion:1];
+//    [self drawNextQuestionButton];
 
 }
 

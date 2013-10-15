@@ -51,6 +51,7 @@
 		8A568F5217F7C45A009FDCB4 /* LSAboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A568F5017F7C45A009FDCB4 /* LSAboutAppViewController.m */; };
 		8A568F5317F7C45A009FDCB4 /* LSAboutAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A568F5117F7C45A009FDCB4 /* LSAboutAppViewController.xib */; };
 		8A568F5517F7CE33009FDCB4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A568F5417F7CE33009FDCB4 /* StoreKit.framework */; };
+		8AAB6C77180D82D600B6D183 /* AnswerSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB6C76180D82D600B6D183 /* AnswerSheetView.m */; };
 		8AC97FAB17D5CE430051B184 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC97FAA17D5CE430051B184 /* Default.png */; };
 		8AC97FAD17D5CE560051B184 /* Defalult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC97FAC17D5CE560051B184 /* Defalult@2x.png */; };
 		8AC97FAF17D5CE8C0051B184 /* discbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC97FAE17D5CE8C0051B184 /* discbg.png */; };
@@ -127,6 +128,8 @@
 		8A568F5017F7C45A009FDCB4 /* LSAboutAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAboutAppViewController.m; sourceTree = "<group>"; };
 		8A568F5117F7C45A009FDCB4 /* LSAboutAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSAboutAppViewController.xib; sourceTree = "<group>"; };
 		8A568F5417F7CE33009FDCB4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8AAB6C75180D82D600B6D183 /* AnswerSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerSheetView.h; sourceTree = "<group>"; };
+		8AAB6C76180D82D600B6D183 /* AnswerSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerSheetView.m; sourceTree = "<group>"; };
 		8AC97FAA17D5CE430051B184 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8AC97FAC17D5CE560051B184 /* Defalult@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Defalult@2x.png"; sourceTree = "<group>"; };
 		8AC97FAE17D5CE8C0051B184 /* discbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discbg.png; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				8A4D7F8E17D4C4AF00202CA0 /* LSResultViewController.xib */,
 				8A4D7F9317D4D4D700202CA0 /* LSMoreViewController.xib */,
 				8A568F5117F7C45A009FDCB4 /* LSAboutAppViewController.xib */,
+				8AAB6C75180D82D600B6D183 /* AnswerSheetView.h */,
+				8AAB6C76180D82D600B6D183 /* AnswerSheetView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				8A4D7F7F17D440D900202CA0 /* LSQuestionsViewController.m in Sources */,
 				8A568F5217F7C45A009FDCB4 /* LSAboutAppViewController.m in Sources */,
 				8A4D7F4C17D1524600202CA0 /* main.m in Sources */,
+				8AAB6C77180D82D600B6D183 /* AnswerSheetView.m in Sources */,
 				8A4D7F5317D1524600202CA0 /* DSIC.xcdatamodeld in Sources */,
 				8A4D7F9417D4D4D700202CA0 /* LSMoreViewController.m in Sources */,
 				8A4D7F8F17D4C4AF00202CA0 /* LSResultViewController.m in Sources */,
