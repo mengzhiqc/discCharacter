@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "AnswerSheetView.h"
+#import "Discdb.h"
 
-@interface LSQuestionsViewController : UIViewController
+
+@interface LSQuestionsViewController : UIViewController<answerSheetViewDelegate, answerSheetViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property(nonatomic,strong) LSAppDelegate *appDelegate;
 
 @end

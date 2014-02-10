@@ -9,6 +9,7 @@
 #import "LSResultViewController.h"
 #import "LSMoreViewController.h"
 #import "LSImageUtil.h"
+#import "LSAppDelegate.h"
 
 @interface LSResultViewController ()
 @property(nonatomic,strong) NSMutableArray *finnalScore;
@@ -53,98 +54,45 @@
 
 - (void) calculateData
 {
-    NSMutableArray *always = [[NSMutableArray alloc]init];
-    NSMutableArray *noalways = [[NSMutableArray alloc]init];
-    for (id key in result) {
-        NSDictionary *item = [result objectForKey:key];
-        NSString *alwaysItem = [item objectForKey:@"always"];
-        NSString *noalwaysItem = [item objectForKey:@"noalways"];
-        if (alwaysItem) {
-            [always addObject:alwaysItem];
-        }
-        if (noalwaysItem) {
-            [noalways addObject:noalwaysItem];
-        }
-    }
-    
-    
-    NSMutableArray *work = [[NSMutableArray alloc]init];
-    NSMutableArray *personal = [[NSMutableArray alloc]init];
-    
-    for (id key in data) {
-        NSDictionary *item = [data objectForKey:key];
-        NSNumber *itemId = [item objectForKey:@"id"];
-        NSString *itemIdString = [NSString stringWithFormat:@"%@",itemId];
-        NSString *sigValue = [item objectForKey:@"value1"];
-        for (NSString *item1 in always) {
-            if ([item1 isEqualToString:itemIdString]) {
-                [work addObject:sigValue];
-            }
-        }
-        for (NSString *item2 in noalways) {
-            if ([item2 isEqualToString:itemIdString]) {
-                [personal addObject:sigValue];
-            }
-        }
-    }
-    
-    int d1 = 0;
-    int i1 = 0;
-    int s1 = 0;
-    int c1 = 0;
-    int d2 = 0;
-    int i2 = 0;
-    int s2 = 0;
-    int c2 = 0;
-   
-    NSMutableArray *workResult = [[NSMutableArray alloc]init];
-    NSMutableArray *personalResult = [[NSMutableArray alloc]init];
-
-    for (NSString *item3 in work) {
-        if ([item3 isEqualToString:@"O"]) {
-            d1++;
-        }
-        if ([item3 isEqualToString:@"@"]) {
-            i1++;
-
-        }
-        if ([item3 isEqualToString:@"V"]) {
-            s1++;
-        }
-        if ([item3 isEqualToString:@"#"]) {
-            c1++;
-        }
-        
-    }
-    [workResult addObject:[NSNumber numberWithInt:d1]];
-    [workResult addObject:[NSNumber numberWithInt:i1]];
-    [workResult addObject:[NSNumber numberWithInt:s1]];
-    [workResult addObject:[NSNumber numberWithInt:c1]];
-
-    
-    for (NSString *item4 in personal) {
-        if ([item4 isEqualToString:@"O"]) {
-            d2++;
-        }
-        if ([item4 isEqualToString:@"@"]) {
-            i2++;
-        }
-        if ([item4 isEqualToString:@"V"]) {
-            s2++;
-        }
-        if ([item4 isEqualToString:@"#"]) {
-            c2++;
-        }
-        
-    }
-    [personalResult addObject:[NSNumber numberWithInt:d2]];
-    [personalResult addObject:[NSNumber numberWithInt:i2]];
-    [personalResult addObject:[NSNumber numberWithInt:s2]];
-    [personalResult addObject:[NSNumber numberWithInt:c2]];
-
-    NSDictionary *resultDict = [NSDictionary dictionaryWithObjectsAndKeys:workResult,@"1",personalResult,@"2", nil];
+    NSArray *workResult = @[
+                            [self calculateFromCoreData:YES factor:@"D"],
+                            [self calculateFromCoreData:YES factor:@"I"],
+                            [self calculateFromCoreData:YES factor:@"S"],
+                            [self calculateFromCoreData:YES factor:@"C"],
+                            ];
+    NSArray *personalResult = @[
+                                [self calculateFromCoreData:NO factor:@"D"],
+                                [self calculateFromCoreData:NO factor:@"I"],
+                                [self calculateFromCoreData:NO factor:@"S"],
+                                [self calculateFromCoreData:NO factor:@"C"],
+                                ];
+    NSDictionary *resultDict = @{@"1":workResult,@"2":personalResult};
     [self drawResultPic:resultDict];
+    
+}
 
+- (NSNumber *)calculateFromCoreData:(BOOL)isAlways factor:(NSString *)factor
+{
+    NSDictionary *mapper = @{@"D":@1,@"I":@2,@"S":@3,@"C":@4};
+    NSString *sql ;
+    if (isAlways) { //表示是always
+        sql = @"always=%@";
+    } else {
+        sql = @"noalways=%@";
+    }
+    
+    LSAppDelegate *delegate = (LSAppDelegate *)[UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = delegate.managedObjectContext;
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Discdb" inManagedObjectContext:context];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:sql,[mapper objectForKey:factor]];
+    [request setPredicate:predicate];
+    [request setEntity:entity];
+    NSError *error;
+    NSArray *fetchedItems = [delegate.managedObjectContext executeFetchRequest:request error:&error];
+    NSInteger count = [fetchedItems count];
+    return [NSNumber numberWithInteger:count];
 }
 
 - (NSDictionary *) convertResultToRealValueRules {

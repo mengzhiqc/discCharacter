@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>asihttp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>8A4D7F5917D1524600202CA0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A66B16F1849FBE600D9C5A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A66B17C1849FBE600D9C5A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

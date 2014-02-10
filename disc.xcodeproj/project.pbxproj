@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E579FB9A9E54D2AAA71C97B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F64B812D44C4077978C5F0C /* libPods.a */; };
 		8A09D89317E46C9F00CCC4B6 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A09D89017E46C9F00CCC4B6 /* libMobClickLibrary.a */; };
 		8A09D89617E46D9C00CCC4B6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A09D89517E46D9C00CCC4B6 /* libz.dylib */; };
 		8A4D7F3E17D1524600202CA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4D7F3D17D1524600202CA0 /* Foundation.framework */; };
@@ -32,7 +33,6 @@
 		8A4D7F9417D4D4D700202CA0 /* LSMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D7F9217D4D4D700202CA0 /* LSMoreViewController.m */; };
 		8A4D7F9517D4D4D700202CA0 /* LSMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A4D7F9317D4D4D700202CA0 /* LSMoreViewController.xib */; };
 		8A4D7FB517D5C66F00202CA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4D7F3F17D1524600202CA0 /* CoreGraphics.framework */; };
-		8A568E8917F6440D009FDCB4 /* LSImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A568E8817F6440D009FDCB4 /* LSImageUtil.m */; };
 		8A568E8C17F698E6009FDCB4 /* disc-result-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A568E8B17F698E6009FDCB4 /* disc-result-background.png */; };
 		8A568E9017F69DB2009FDCB4 /* LSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A568E8E17F69DB2009FDCB4 /* LSHomeViewController.m */; };
 		8A568E9117F69DB2009FDCB4 /* LSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A568E8F17F69DB2009FDCB4 /* LSHomeViewController.xib */; };
@@ -51,11 +51,15 @@
 		8A568F5217F7C45A009FDCB4 /* LSAboutAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A568F5017F7C45A009FDCB4 /* LSAboutAppViewController.m */; };
 		8A568F5317F7C45A009FDCB4 /* LSAboutAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A568F5117F7C45A009FDCB4 /* LSAboutAppViewController.xib */; };
 		8A568F5517F7CE33009FDCB4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A568F5417F7CE33009FDCB4 /* StoreKit.framework */; };
+		8A66B0D71849F02A00D9C5A5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A66B0D61849F02A00D9C5A5 /* CFNetwork.framework */; };
+		8A7A919218598EEB00E1A808 /* libasihttp4arc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7A919118598EEB00E1A808 /* libasihttp4arc.a */; };
+		8A7A9196185990C700E1A808 /* libLSUtil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7A9195185990C700E1A808 /* libLSUtil.a */; };
 		8AAB6C77180D82D600B6D183 /* AnswerSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAB6C76180D82D600B6D183 /* AnswerSheetView.m */; };
 		8AC97FAB17D5CE430051B184 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC97FAA17D5CE430051B184 /* Default.png */; };
 		8AC97FAD17D5CE560051B184 /* Defalult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC97FAC17D5CE560051B184 /* Defalult@2x.png */; };
 		8AC97FAF17D5CE8C0051B184 /* discbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC97FAE17D5CE8C0051B184 /* discbg.png */; };
 		8AC97FB117D5CF800051B184 /* discbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AC97FB017D5CF800051B184 /* discbutton.png */; };
+		8AD602061886D8260092728A /* Discdb.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD602051886D8260092728A /* Discdb.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,33 +73,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F64B812D44C4077978C5F0C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A09D89017E46C9F00CCC4B6 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		8A09D89117E46C9F00CCC4B6 /* libMobClickLibrary_armv6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary_armv6.a; sourceTree = "<group>"; };
 		8A09D89217E46C9F00CCC4B6 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		8A09D89517E46D9C00CCC4B6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		8A4D7F3A17D1524600202CA0 /* DSIC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSIC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A4D7F3A17D1524600202CA0 /* disc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = disc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4D7F3D17D1524600202CA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A4D7F3F17D1524600202CA0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8A4D7F4117D1524600202CA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8A4D7F4317D1524600202CA0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		8A4D7F4717D1524600202CA0 /* DSIC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DSIC-Info.plist"; sourceTree = "<group>"; };
+		8A4D7F4717D1524600202CA0 /* disc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "disc-Info.plist"; sourceTree = "<group>"; };
 		8A4D7F4917D1524600202CA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A4D7F4B17D1524600202CA0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8A4D7F4D17D1524600202CA0 /* DSIC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DSIC-Prefix.pch"; sourceTree = "<group>"; };
+		8A4D7F4D17D1524600202CA0 /* disc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "disc-Prefix.pch"; sourceTree = "<group>"; };
 		8A4D7F4E17D1524600202CA0 /* LSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSAppDelegate.h; sourceTree = "<group>"; };
 		8A4D7F4F17D1524600202CA0 /* LSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSAppDelegate.m; sourceTree = "<group>"; };
 		8A4D7F5217D1524600202CA0 /* DSIC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DSIC.xcdatamodel; sourceTree = "<group>"; };
 		8A4D7F5417D1524600202CA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8A4D7F5A17D1524600202CA0 /* DSICTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DSICTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A4D7F5A17D1524600202CA0 /* discTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = discTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4D7F5B17D1524600202CA0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		8A4D7F6417D1524600202CA0 /* DSICTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DSICTests-Info.plist"; sourceTree = "<group>"; };
+		8A4D7F6417D1524600202CA0 /* discTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "discTests-Info.plist"; sourceTree = "<group>"; };
 		8A4D7F6617D1524600202CA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8A4D7F6817D1524600202CA0 /* DSICTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSICTests.m; sourceTree = "<group>"; };
 		8A4D7F7C17D43C3B00202CA0 /* LSQuestionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSQuestionsViewController.h; sourceTree = "<group>"; };
 		8A4D7F7D17D43C3B00202CA0 /* LSQuestionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSQuestionsViewController.m; sourceTree = "<group>"; };
 		8A4D7F7E17D43C3B00202CA0 /* LSQuestionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LSQuestionsViewController.xib; sourceTree = "<group>"; };
-		8A4D7F8617D4725800202CA0 /* Discdb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Discdb.h; sourceTree = "<group>"; };
-		8A4D7F8717D4725800202CA0 /* Discdb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Discdb.m; sourceTree = "<group>"; };
 		8A4D7F8817D473A900202CA0 /* dsicList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dsicList.plist; sourceTree = "<group>"; };
 		8A4D7F8A17D4B11900202CA0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8A4D7F8C17D4C4AF00202CA0 /* LSResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSResultViewController.h; sourceTree = "<group>"; };
@@ -104,8 +107,6 @@
 		8A4D7F9117D4D4D700202CA0 /* LSMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMoreViewController.h; sourceTree = "<group>"; };
 		8A4D7F9217D4D4D700202CA0 /* LSMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMoreViewController.m; sourceTree = "<group>"; };
 		8A4D7F9317D4D4D700202CA0 /* LSMoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSMoreViewController.xib; sourceTree = "<group>"; };
-		8A568E8717F6440D009FDCB4 /* LSImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSImageUtil.h; sourceTree = "<group>"; };
-		8A568E8817F6440D009FDCB4 /* LSImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSImageUtil.m; sourceTree = "<group>"; };
 		8A568E8B17F698E6009FDCB4 /* disc-result-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disc-result-background.png"; sourceTree = "<group>"; };
 		8A568E8D17F69DB2009FDCB4 /* LSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHomeViewController.h; sourceTree = "<group>"; };
 		8A568E8E17F69DB2009FDCB4 /* LSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHomeViewController.m; sourceTree = "<group>"; };
@@ -128,12 +129,34 @@
 		8A568F5017F7C45A009FDCB4 /* LSAboutAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAboutAppViewController.m; sourceTree = "<group>"; };
 		8A568F5117F7C45A009FDCB4 /* LSAboutAppViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSAboutAppViewController.xib; sourceTree = "<group>"; };
 		8A568F5417F7CE33009FDCB4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8A66B0D61849F02A00D9C5A5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8A7A917018598A1A00E1A808 /* LSImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSImageUtil.h; sourceTree = "<group>"; };
+		8A7A917118598A2900E1A808 /* LSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSUtil.h; sourceTree = "<group>"; };
+		8A7A918318598B6B00E1A808 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		8A7A918418598B6B00E1A808 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		8A7A918518598B6B00E1A808 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		8A7A918618598B6B00E1A808 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		8A7A918718598B6B00E1A808 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		8A7A918818598B6B00E1A808 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		8A7A918918598B6B00E1A808 /* asihttp4arc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asihttp4arc.h; sourceTree = "<group>"; };
+		8A7A918A18598B6B00E1A808 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		8A7A918B18598B6B00E1A808 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		8A7A918C18598B6B00E1A808 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		8A7A918D18598B6B00E1A808 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		8A7A918E18598B6B00E1A808 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		8A7A918F18598B6B00E1A808 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		8A7A919018598B6B00E1A808 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		8A7A919118598EEB00E1A808 /* libasihttp4arc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libasihttp4arc.a; sourceTree = "<group>"; };
+		8A7A9195185990C700E1A808 /* libLSUtil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLSUtil.a; sourceTree = "<group>"; };
 		8AAB6C75180D82D600B6D183 /* AnswerSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerSheetView.h; sourceTree = "<group>"; };
 		8AAB6C76180D82D600B6D183 /* AnswerSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerSheetView.m; sourceTree = "<group>"; };
 		8AC97FAA17D5CE430051B184 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8AC97FAC17D5CE560051B184 /* Defalult@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Defalult@2x.png"; sourceTree = "<group>"; };
 		8AC97FAE17D5CE8C0051B184 /* discbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discbg.png; sourceTree = "<group>"; };
 		8AC97FB017D5CF800051B184 /* discbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discbutton.png; sourceTree = "<group>"; };
+		8AD602041886D8260092728A /* Discdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Discdb.h; sourceTree = "<group>"; };
+		8AD602051886D8260092728A /* Discdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Discdb.m; sourceTree = "<group>"; };
+		9AC65800376C4BBA85ED0588 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,14 +164,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A66B0D71849F02A00D9C5A5 /* CFNetwork.framework in Frameworks */,
 				8A568F5517F7CE33009FDCB4 /* StoreKit.framework in Frameworks */,
 				8A09D89617E46D9C00CCC4B6 /* libz.dylib in Frameworks */,
 				8A4D7FB517D5C66F00202CA0 /* CoreGraphics.framework in Frameworks */,
+				8A7A9196185990C700E1A808 /* libLSUtil.a in Frameworks */,
+				8A7A919218598EEB00E1A808 /* libasihttp4arc.a in Frameworks */,
 				8A4D7F8B17D4B11900202CA0 /* QuartzCore.framework in Frameworks */,
 				8A4D7F4417D1524600202CA0 /* CoreData.framework in Frameworks */,
 				8A09D89317E46C9F00CCC4B6 /* libMobClickLibrary.a in Frameworks */,
 				8A4D7F4217D1524600202CA0 /* UIKit.framework in Frameworks */,
 				8A4D7F3E17D1524600202CA0 /* Foundation.framework in Frameworks */,
+				1E579FB9A9E54D2AAA71C97B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,9 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				8A4D7F5417D1524600202CA0 /* Images.xcassets */,
+				8AD602041886D8260092728A /* Discdb.h */,
+				8AD602051886D8260092728A /* Discdb.m */,
 				8A4D7F5117D1524600202CA0 /* DSIC.xcdatamodeld */,
-				8A4D7F8617D4725800202CA0 /* Discdb.h */,
-				8A4D7F8717D4725800202CA0 /* Discdb.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -226,14 +253,15 @@
 				8A4D7F6217D1524600202CA0 /* DSICTests */,
 				8A4D7F3C17D1524600202CA0 /* Frameworks */,
 				8A4D7F3B17D1524600202CA0 /* Products */,
+				9AC65800376C4BBA85ED0588 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
 		8A4D7F3B17D1524600202CA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8A4D7F3A17D1524600202CA0 /* DSIC.app */,
-				8A4D7F5A17D1524600202CA0 /* DSICTests.xctest */,
+				8A4D7F3A17D1524600202CA0 /* disc.app */,
+				8A4D7F5A17D1524600202CA0 /* discTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +269,7 @@
 		8A4D7F3C17D1524600202CA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A66B0D61849F02A00D9C5A5 /* CFNetwork.framework */,
 				8A568F5417F7CE33009FDCB4 /* StoreKit.framework */,
 				8A09D89517E46D9C00CCC4B6 /* libz.dylib */,
 				8A4D7F8A17D4B11900202CA0 /* QuartzCore.framework */,
@@ -249,6 +278,7 @@
 				8A4D7F4117D1524600202CA0 /* UIKit.framework */,
 				8A4D7F4317D1524600202CA0 /* CoreData.framework */,
 				8A4D7F5B17D1524600202CA0 /* XCTest.framework */,
+				1F64B812D44C4077978C5F0C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,12 +286,12 @@
 		8A4D7F4517D1524600202CA0 /* DSIC */ = {
 			isa = PBXGroup;
 			children = (
-				8A0A44E918085D55008D385D /* view */,
 				8A4D7F4E17D1524600202CA0 /* LSAppDelegate.h */,
 				8A4D7F4F17D1524600202CA0 /* LSAppDelegate.m */,
+				8A7A917F18598B3D00E1A808 /* StaticLib */,
+				8A0A44E918085D55008D385D /* view */,
 				8A09D89917E4732C00CCC4B6 /* controller */,
 				8A09D89717E472D900CCC4B6 /* model */,
-				8A568E8617F643FB009FDCB4 /* util */,
 				8A568F3C17F7B6C9009FDCB4 /* resource */,
 				8A4D7F4617D1524600202CA0 /* Supporting Files */,
 			);
@@ -271,10 +301,10 @@
 		8A4D7F4617D1524600202CA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8A4D7F4717D1524600202CA0 /* DSIC-Info.plist */,
+				8A4D7F4717D1524600202CA0 /* disc-Info.plist */,
 				8A4D7F4817D1524600202CA0 /* InfoPlist.strings */,
 				8A4D7F4B17D1524600202CA0 /* main.m */,
-				8A4D7F4D17D1524600202CA0 /* DSIC-Prefix.pch */,
+				8A4D7F4D17D1524600202CA0 /* disc-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -291,19 +321,10 @@
 		8A4D7F6317D1524600202CA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8A4D7F6417D1524600202CA0 /* DSICTests-Info.plist */,
+				8A4D7F6417D1524600202CA0 /* discTests-Info.plist */,
 				8A4D7F6517D1524600202CA0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8A568E8617F643FB009FDCB4 /* util */ = {
-			isa = PBXGroup;
-			children = (
-				8A568E8717F6440D009FDCB4 /* LSImageUtil.h */,
-				8A568E8817F6440D009FDCB4 /* LSImageUtil.m */,
-			);
-			name = util;
 			sourceTree = "<group>";
 		};
 		8A568E8A17F6443C009FDCB4 /* component */ = {
@@ -349,29 +370,72 @@
 			name = resource;
 			sourceTree = "<group>";
 		};
+		8A7A91691859863700E1A808 /* LSUtil */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A9195185990C700E1A808 /* libLSUtil.a */,
+				8A7A917118598A2900E1A808 /* LSUtil.h */,
+				8A7A917018598A1A00E1A808 /* LSImageUtil.h */,
+			);
+			name = LSUtil;
+			sourceTree = "<group>";
+		};
+		8A7A917F18598B3D00E1A808 /* StaticLib */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A918018598B4B00E1A808 /* ASIHttp */,
+				8A7A91691859863700E1A808 /* LSUtil */,
+			);
+			name = StaticLib;
+			sourceTree = "<group>";
+		};
+		8A7A918018598B4B00E1A808 /* ASIHttp */ = {
+			isa = PBXGroup;
+			children = (
+				8A7A919118598EEB00E1A808 /* libasihttp4arc.a */,
+				8A7A918918598B6B00E1A808 /* asihttp4arc.h */,
+				8A7A918318598B6B00E1A808 /* ASIAuthenticationDialog.h */,
+				8A7A918418598B6B00E1A808 /* ASICacheDelegate.h */,
+				8A7A918518598B6B00E1A808 /* ASIDataCompressor.h */,
+				8A7A918618598B6B00E1A808 /* ASIDataDecompressor.h */,
+				8A7A918718598B6B00E1A808 /* ASIDownloadCache.h */,
+				8A7A918818598B6B00E1A808 /* ASIFormDataRequest.h */,
+				8A7A918A18598B6B00E1A808 /* ASIHTTPRequest.h */,
+				8A7A918B18598B6B00E1A808 /* ASIHTTPRequestConfig.h */,
+				8A7A918C18598B6B00E1A808 /* ASIHTTPRequestDelegate.h */,
+				8A7A918D18598B6B00E1A808 /* ASIInputStream.h */,
+				8A7A918E18598B6B00E1A808 /* ASINetworkQueue.h */,
+				8A7A918F18598B6B00E1A808 /* ASIProgressDelegate.h */,
+				8A7A919018598B6B00E1A808 /* Reachability.h */,
+			);
+			name = ASIHttp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8A4D7F3917D1524600202CA0 /* DSIC */ = {
+		8A4D7F3917D1524600202CA0 /* disc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A4D7F6C17D1524600202CA0 /* Build configuration list for PBXNativeTarget "DSIC" */;
+			buildConfigurationList = 8A4D7F6C17D1524600202CA0 /* Build configuration list for PBXNativeTarget "disc" */;
 			buildPhases = (
+				9678474AF24E4D1F965FFE13 /* Check Pods Manifest.lock */,
 				8A4D7F3617D1524600202CA0 /* Sources */,
 				8A4D7F3717D1524600202CA0 /* Frameworks */,
 				8A4D7F3817D1524600202CA0 /* Resources */,
+				25A1DB2117434D52A125604F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = DSIC;
+			name = disc;
 			productName = DSIC;
-			productReference = 8A4D7F3A17D1524600202CA0 /* DSIC.app */;
+			productReference = 8A4D7F3A17D1524600202CA0 /* disc.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8A4D7F5917D1524600202CA0 /* DSICTests */ = {
+		8A4D7F5917D1524600202CA0 /* discTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A4D7F6F17D1524600202CA0 /* Build configuration list for PBXNativeTarget "DSICTests" */;
+			buildConfigurationList = 8A4D7F6F17D1524600202CA0 /* Build configuration list for PBXNativeTarget "discTests" */;
 			buildPhases = (
 				8A4D7F5617D1524600202CA0 /* Sources */,
 				8A4D7F5717D1524600202CA0 /* Frameworks */,
@@ -382,9 +446,9 @@
 			dependencies = (
 				8A4D7F6117D1524600202CA0 /* PBXTargetDependency */,
 			);
-			name = DSICTests;
+			name = discTests;
 			productName = DSICTests;
-			productReference = 8A4D7F5A17D1524600202CA0 /* DSICTests.xctest */;
+			productReference = 8A4D7F5A17D1524600202CA0 /* discTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -404,7 +468,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8A4D7F3517D1524600202CA0 /* Build configuration list for PBXProject "DSIC" */;
+			buildConfigurationList = 8A4D7F3517D1524600202CA0 /* Build configuration list for PBXProject "disc" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -416,8 +480,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8A4D7F3917D1524600202CA0 /* DSIC */,
-				8A4D7F5917D1524600202CA0 /* DSICTests */,
+				8A4D7F3917D1524600202CA0 /* disc */,
+				8A4D7F5917D1524600202CA0 /* discTests */,
 			);
 		};
 /* End PBXProject section */
@@ -463,16 +527,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25A1DB2117434D52A125604F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9678474AF24E4D1F965FFE13 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A4D7F3617D1524600202CA0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8A568E9017F69DB2009FDCB4 /* LSHomeViewController.m in Sources */,
-				8A568E8917F6440D009FDCB4 /* LSImageUtil.m in Sources */,
 				8A568F2317F79512009FDCB4 /* ICETutorialPage.m in Sources */,
 				8A4D7F5017D1524600202CA0 /* LSAppDelegate.m in Sources */,
 				8A568F2217F79512009FDCB4 /* ICETutorialController.m in Sources */,
+				8AD602061886D8260092728A /* Discdb.m in Sources */,
 				8A4D7F7F17D440D900202CA0 /* LSQuestionsViewController.m in Sources */,
 				8A568F5217F7C45A009FDCB4 /* LSAboutAppViewController.m in Sources */,
 				8A4D7F4C17D1524600202CA0 /* main.m in Sources */,
@@ -496,7 +593,7 @@
 /* Begin PBXTargetDependency section */
 		8A4D7F6117D1524600202CA0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8A4D7F3917D1524600202CA0 /* DSIC */;
+			target = 8A4D7F3917D1524600202CA0 /* disc */;
 			targetProxy = 8A4D7F6017D1524600202CA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -591,38 +688,44 @@
 		};
 		8A4D7F6D17D1524600202CA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AC65800376C4BBA85ED0588 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 智 孟 (F9877E4M94)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DSIC/DSIC-Prefix.pch";
-				INFOPLIST_FILE = "DSIC/DSIC-Info.plist";
+				GCC_PREFIX_HEADER = "DSIC/disc-Prefix.pch";
+				INFOPLIST_FILE = "DSIC/disc-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/kavin/WorkSpace/iOSDeveloper/DSIC/DSIC/UMAnalytics_Sdk_2.2.1.OpenUDID,
+					/Users/kavin/WorkSpace/iOSDeveloper/DSIC/DSIC,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = disc;
+				PROVISIONING_PROFILE = "16D17864-35E0-4718-B383-81A97EE7890F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		8A4D7F6E17D1524600202CA0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AC65800376C4BBA85ED0588 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Meng Zhi (ACCTX724NV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DSIC/DSIC-Prefix.pch";
-				INFOPLIST_FILE = "DSIC/DSIC-Info.plist";
+				GCC_PREFIX_HEADER = "DSIC/disc-Prefix.pch";
+				INFOPLIST_FILE = "DSIC/disc-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/kavin/WorkSpace/iOSDeveloper/DSIC/DSIC/UMAnalytics_Sdk_2.2.1.OpenUDID,
+					/Users/kavin/WorkSpace/iOSDeveloper/DSIC/DSIC,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = disc;
+				PROVISIONING_PROFILE = "EAB61483-B578-4798-B68C-C3D68D7DB038";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -642,8 +745,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "DSICTests/DSICTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DSICTests/discTests-Info.plist";
+				PRODUCT_NAME = discTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -660,8 +763,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSIC/DSIC-Prefix.pch";
-				INFOPLIST_FILE = "DSICTests/DSICTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DSICTests/discTests-Info.plist";
+				PRODUCT_NAME = discTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -670,7 +773,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8A4D7F3517D1524600202CA0 /* Build configuration list for PBXProject "DSIC" */ = {
+		8A4D7F3517D1524600202CA0 /* Build configuration list for PBXProject "disc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A4D7F6A17D1524600202CA0 /* Debug */,
@@ -679,7 +782,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A4D7F6C17D1524600202CA0 /* Build configuration list for PBXNativeTarget "DSIC" */ = {
+		8A4D7F6C17D1524600202CA0 /* Build configuration list for PBXNativeTarget "disc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A4D7F6D17D1524600202CA0 /* Debug */,
@@ -688,7 +791,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A4D7F6F17D1524600202CA0 /* Build configuration list for PBXNativeTarget "DSICTests" */ = {
+		8A4D7F6F17D1524600202CA0 /* Build configuration list for PBXNativeTarget "discTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A4D7F7017D1524600202CA0 /* Debug */,

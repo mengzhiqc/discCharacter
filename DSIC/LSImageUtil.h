@@ -10,5 +10,4 @@
 
 @interface LSImageUtil : NSObject
 + (UIImage *)scaleImage:(UIImage *)image toScale:(float)scaleSize;
-
 @end
