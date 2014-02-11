@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E579FB9A9E54D2AAA71C97B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F64B812D44C4077978C5F0C /* libPods.a */; };
+		8A0009A318AA57BA0004476A /* DaoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0009A218AA57BA0004476A /* DaoManager.m */; };
 		8A09D89317E46C9F00CCC4B6 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A09D89017E46C9F00CCC4B6 /* libMobClickLibrary.a */; };
 		8A09D89617E46D9C00CCC4B6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A09D89517E46D9C00CCC4B6 /* libz.dylib */; };
 		8A4D7F3E17D1524600202CA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4D7F3D17D1524600202CA0 /* Foundation.framework */; };
@@ -74,6 +75,8 @@
 
 /* Begin PBXFileReference section */
 		1F64B812D44C4077978C5F0C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A0009A118AA57BA0004476A /* DaoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaoManager.h; sourceTree = "<group>"; };
+		8A0009A218AA57BA0004476A /* DaoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaoManager.m; sourceTree = "<group>"; };
 		8A09D89017E46C9F00CCC4B6 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		8A09D89117E46C9F00CCC4B6 /* libMobClickLibrary_armv6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary_armv6.a; sourceTree = "<group>"; };
 		8A09D89217E46C9F00CCC4B6 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				8AD602041886D8260092728A /* Discdb.h */,
 				8AD602051886D8260092728A /* Discdb.m */,
 				8A4D7F5117D1524600202CA0 /* DSIC.xcdatamodeld */,
+				8A0009A118AA57BA0004476A /* DaoManager.h */,
+				8A0009A218AA57BA0004476A /* DaoManager.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 			files = (
 				8A568E9017F69DB2009FDCB4 /* LSHomeViewController.m in Sources */,
 				8A568F2317F79512009FDCB4 /* ICETutorialPage.m in Sources */,
+				8A0009A318AA57BA0004476A /* DaoManager.m in Sources */,
 				8A4D7F5017D1524600202CA0 /* LSAppDelegate.m in Sources */,
 				8A568F2217F79512009FDCB4 /* ICETutorialController.m in Sources */,
 				8AD602061886D8260092728A /* Discdb.m in Sources */,

@@ -10,6 +10,7 @@
 #import "LSResultViewController.h"
 #import "LSAppDelegate.h"
 #import "Toast+UIView.h"
+#import "DaoManager.h"
 
 #define TAG_BLOCK_WIDTH 10;
 #define LAST_QUESTION 24;
@@ -138,14 +139,18 @@
 {
     if (!self.isLeftSelected && !self.isRightSelected) {
         [self.view makeToast:@"请同时选中常有和不常有的行为"];
+        [MobClick event:@"LeftAndRightBothNoTap"];
         
     } else if(self.isLeftSelected && !self.isRightSelected){
         [self.view makeToast:@"请选中不常有的行为"];
+        [MobClick event:@"RightNotTap"];
 
     } else if(!self.isLeftSelected && self.isRightSelected) {
         [self.view makeToast:@"请选中常有的行为"];
+        [MobClick event:@"LeftNotTap"];
 
     }else {
+        [MobClick event:@"NextButtonPressedSuccessfully" label:[NSString stringWithFormat:@"Current Page:%d",self.index]];
         self.index++;
         if (self.index > 24) {
             LSResultViewController *resultController = [[LSResultViewController alloc]initWithNibName:@"LSResultViewController" bundle:Nil];
@@ -175,49 +180,36 @@
 
 - (void) answerSheetView:(AnswerSheetView *)answerSheetView sheetDidTouch:(int)index touchSide:(int)touchSide
 {
-    NSDictionary *charactorMapper = @{@"O":@"1",@"@":@"2",@"V":@"3",@"#":@"4"};
+    NSDictionary *dict = @{@"page":[NSNumber numberWithInt:self.index],@"touchSide":[NSNumber numberWithInt:touchSide],@"touchIndex":[NSNumber numberWithInt:index]};
+    [MobClick event:@"sheetDidTouch" attributes:dict];
+    
+    
+    NSDictionary *charactorMapper = @{@"N":@"",@"O":@"1",@"@":@"2",@"V":@"3",@"#":@"4"};
     NSDictionary *discItem = [self.dataSource objectForKey:[NSString stringWithFormat:@"%d",index]];
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Discdb" inManagedObjectContext:self.appDelegate.managedObjectContext];
-    
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id==%d",index/100];
-    [fetchRequest setPredicate:predicate];
-    [fetchRequest setEntity:entity];
-    NSError *error;
-    NSArray *fetchedItems = [self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    if (error) {
-        NSLog(@"save:%@",[error description]);
-
-    }
-
-    Discdb *item;
-    if ([fetchedItems count] > 0) {
-        item = [fetchedItems lastObject];
-    }else{
-        item = [NSEntityDescription insertNewObjectForEntityForName:@"Discdb" inManagedObjectContext:self.appDelegate.managedObjectContext];
-        [self.appDelegate.managedObjectContext insertObject:item];
-
-    }
+    DaoManager *daoManager = [[DaoManager alloc]initWithEntityString:@"Discdb"];
+    NSArray *fetchedItems = [daoManager findByPredicate:predicate];
     
-    
-    item.id = [NSNumber numberWithInt:index/100];
-    item.name = [discItem objectForKey:@"name"];
+    NSMutableDictionary *item = [NSMutableDictionary dictionary];
+    [item setObject:[NSNumber numberWithInt:index/100] forKey:@"id"];
+    [item setObject:[discItem objectForKey:@"name"] forKey:@"name"];
     if (touchSide == LSAnswerSheetSideLeft) {
-        item.always = [charactorMapper objectForKey:[discItem objectForKey:@"value1"]];
+        NSString *alwaysValue = [charactorMapper objectForKey:[discItem objectForKey:@"value1"]];
+        [item setObject:alwaysValue forKey:@"always"];
         self.isLeftSelected = YES;
     }
     else {
-        item.noalways = [charactorMapper objectForKey:[discItem objectForKey:@"value2"]];
+        [item setObject:[charactorMapper objectForKey:[discItem objectForKey:@"value2"]] forKey:@"noalways"];
         self.isRightSelected = YES;
     }
-    NSError *saveError;
-    [self.appDelegate.managedObjectContext save:&saveError];
-    if (saveError == nil) {
-        //NSLog(@"%@ - %@: Page:%@ Has Saved Successfully.",[self class],NSStringFromSelector(_cmd),item.id);
+    
+
+    if ([fetchedItems count] > 0) {
+        [daoManager updateByPredicate:predicate data:@[item]];
+    }else{
+        [daoManager insertData:@[item]];
     }
-    
-    
     
 }
 

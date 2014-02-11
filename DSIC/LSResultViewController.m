@@ -9,7 +9,7 @@
 #import "LSResultViewController.h"
 #import "LSMoreViewController.h"
 #import "LSImageUtil.h"
-#import "LSAppDelegate.h"
+#import "DaoManager.h"
 
 @interface LSResultViewController ()
 @property(nonatomic,strong) NSMutableArray *finnalScore;
@@ -81,16 +81,10 @@
         sql = @"noalways=%@";
     }
     
-    LSAppDelegate *delegate = (LSAppDelegate *)[UIApplication sharedApplication].delegate;
-    NSManagedObjectContext *context = delegate.managedObjectContext;
     
-    NSFetchRequest *request = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Discdb" inManagedObjectContext:context];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:sql,[mapper objectForKey:factor]];
-    [request setPredicate:predicate];
-    [request setEntity:entity];
-    NSError *error;
-    NSArray *fetchedItems = [delegate.managedObjectContext executeFetchRequest:request error:&error];
+    DaoManager *daoManager = [[DaoManager alloc]initWithEntityString:@"Discdb"];
+    NSArray *fetchedItems = [daoManager findByPredicate:predicate];
     NSInteger count = [fetchedItems count];
     return [NSNumber numberWithInteger:count];
 }
