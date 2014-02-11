@@ -206,7 +206,6 @@
 		8A09D89717E472D900CCC4B6 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				8A4D7F5417D1524600202CA0 /* Images.xcassets */,
 				8AD602041886D8260092728A /* Discdb.h */,
 				8AD602051886D8260092728A /* Discdb.m */,
 				8A4D7F5117D1524600202CA0 /* DSIC.xcdatamodeld */,
@@ -352,6 +351,7 @@
 		8A568F3C17F7B6C9009FDCB4 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				8A4D7F5417D1524600202CA0 /* Images.xcassets */,
 				8A568F4D17F7C441009FDCB4 /* aboutUs.html */,
 				8A4D7F8817D473A900202CA0 /* dsicList.plist */,
 				8A568F3817F7B212009FDCB4 /* background-gradient.png */,
