@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="disc" customModuleProvider="target">
+            <connections>
+                <outlet property="beginButton" destination="m7v-IF-mbB" id="3pO-ah-tdP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="whatsDISCTextView" destination="xd9-tO-qTf" id="37o-GH-TvD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xd9-tO-qTf">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <attributedString key="attributedText"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="448"/>
+                    </variation>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-IF-mbB">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="IGZ-rz-e6Q"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <inset key="titleEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                    <size key="titleShadowOffset" width="2" height="2"/>
+                    <state key="normal" title="开始测试">
+                        <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="IGZ-rz-e6Q"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact"/>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="IGZ-rz-e6Q"/>
+                        </mask>
+                    </variation>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="xd9-tO-qTf" secondAttribute="trailing" id="91N-lb-mDu"/>
+                <constraint firstAttribute="trailing" secondItem="m7v-IF-mbB" secondAttribute="trailing" constant="41" id="CJz-zf-bAQ"/>
+                <constraint firstItem="m7v-IF-mbB" firstAttribute="top" secondItem="xd9-tO-qTf" secondAttribute="bottom" constant="30" id="eyA-Ec-pTq"/>
+                <constraint firstItem="xd9-tO-qTf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hJs-3g-QXR"/>
+                <constraint firstItem="xd9-tO-qTf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hta-q1-4np"/>
+                <constraint firstItem="m7v-IF-mbB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="iAk-9A-ghM"/>
+                <constraint firstItem="m7v-IF-mbB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="nug-aI-OrQ"/>
+                <constraint firstAttribute="bottom" secondItem="m7v-IF-mbB" secondAttribute="bottom" constant="242" id="pxj-1g-vEh">
+                    <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                </constraint>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="AbstractSizeClassScreen[heightClass=regular-widthClass=compact]"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="xd9-tO-qTf"/>
+                    <exclude reference="m7v-IF-mbB"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="91N-lb-mDu"/>
+                    <exclude reference="hJs-3g-QXR"/>
+                    <exclude reference="hta-q1-4np"/>
+                    <exclude reference="CJz-zf-bAQ"/>
+                    <exclude reference="eyA-Ec-pTq"/>
+                    <exclude reference="iAk-9A-ghM"/>
+                    <exclude reference="nug-aI-OrQ"/>
+                    <exclude reference="pxj-1g-vEh"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="xd9-tO-qTf"/>
+                    <include reference="m7v-IF-mbB"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="91N-lb-mDu"/>
+                    <include reference="hJs-3g-QXR"/>
+                    <include reference="hta-q1-4np"/>
+                    <include reference="CJz-zf-bAQ"/>
+                    <include reference="eyA-Ec-pTq"/>
+                    <include reference="iAk-9A-ghM"/>
+                    <include reference="nug-aI-OrQ"/>
+                    <include reference="pxj-1g-vEh"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

@@ -7,10 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0A3F4E19A3A259003ACFBF /* dsicList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A0A3F4D19A3A259003ACFBF /* dsicList.plist */; };
 		8ABB390D19742EDC0056B3D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB390C19742EDC0056B3D8 /* AppDelegate.swift */; };
 		8ABB391019742EDC0056B3D8 /* disc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB390E19742EDC0056B3D8 /* disc.xcdatamodeld */; };
 		8ABB391219742EDC0056B3D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB391119742EDC0056B3D8 /* Images.xcassets */; };
 		8ABB391E19742EDC0056B3D8 /* discTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB391D19742EDC0056B3D8 /* discTests.swift */; };
+		8ABB393419742F830056B3D8 /* background-gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB392819742F830056B3D8 /* background-gradient.png */; };
+		8ABB393519742F830056B3D8 /* background-gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB392919742F830056B3D8 /* background-gradient@2x.png */; };
+		8ABB393619742F830056B3D8 /* background-1739@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB392A19742F830056B3D8 /* background-1739@2x.png */; };
+		8ABB393719742F830056B3D8 /* background-1740@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB392B19742F830056B3D8 /* background-1740@2x.png */; };
+		8ABB393819742F830056B3D8 /* background-1741@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB392C19742F830056B3D8 /* background-1741@2x.png */; };
+		8ABB393919742F830056B3D8 /* button-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB392D19742F830056B3D8 /* button-background.png */; };
+		8ABB393A19742F830056B3D8 /* button-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB392E19742F830056B3D8 /* button-background@2x.png */; };
+		8ABB393B19742F830056B3D8 /* disc-result-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB392F19742F830056B3D8 /* disc-result-background.png */; };
+		8ABB393C19742F830056B3D8 /* discbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB393019742F830056B3D8 /* discbg.png */; };
+		8ABB393D19742F830056B3D8 /* Defalult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB393119742F830056B3D8 /* Defalult@2x.png */; };
+		8ABB393E19742F830056B3D8 /* discbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB393219742F830056B3D8 /* discbutton.png */; };
+		8ABB393F19742F830056B3D8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB393319742F830056B3D8 /* Default.png */; };
+		8ABB39441974323D0056B3D8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB39421974323D0056B3D8 /* WelcomeViewController.swift */; };
+		8ABB39451974323D0056B3D8 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB39431974323D0056B3D8 /* WelcomeViewController.xib */; };
+		8ABB39481976D10E0056B3D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB39461976D10E0056B3D8 /* MainViewController.swift */; };
+		8ABB39491976D10E0056B3D8 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ABB39471976D10E0056B3D8 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A0A3F4D19A3A259003ACFBF /* dsicList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dsicList.plist; sourceTree = "<group>"; };
 		8ABB390719742EDC0056B3D8 /* disc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = disc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABB390B19742EDC0056B3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ABB390C19742EDC0056B3D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +50,22 @@
 		8ABB391719742EDC0056B3D8 /* discTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = discTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABB391C19742EDC0056B3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ABB391D19742EDC0056B3D8 /* discTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = discTests.swift; sourceTree = "<group>"; };
+		8ABB392819742F830056B3D8 /* background-gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-gradient.png"; sourceTree = "<group>"; };
+		8ABB392919742F830056B3D8 /* background-gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-gradient@2x.png"; sourceTree = "<group>"; };
+		8ABB392A19742F830056B3D8 /* background-1739@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-1739@2x.png"; sourceTree = "<group>"; };
+		8ABB392B19742F830056B3D8 /* background-1740@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-1740@2x.png"; sourceTree = "<group>"; };
+		8ABB392C19742F830056B3D8 /* background-1741@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-1741@2x.png"; sourceTree = "<group>"; };
+		8ABB392D19742F830056B3D8 /* button-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-background.png"; sourceTree = "<group>"; };
+		8ABB392E19742F830056B3D8 /* button-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-background@2x.png"; sourceTree = "<group>"; };
+		8ABB392F19742F830056B3D8 /* disc-result-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disc-result-background.png"; sourceTree = "<group>"; };
+		8ABB393019742F830056B3D8 /* discbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discbg.png; sourceTree = "<group>"; };
+		8ABB393119742F830056B3D8 /* Defalult@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Defalult@2x.png"; sourceTree = "<group>"; };
+		8ABB393219742F830056B3D8 /* discbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discbutton.png; sourceTree = "<group>"; };
+		8ABB393319742F830056B3D8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8ABB39421974323D0056B3D8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		8ABB39431974323D0056B3D8 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		8ABB39461976D10E0056B3D8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8ABB39471976D10E0056B3D8 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				8ABB390C19742EDC0056B3D8 /* AppDelegate.swift */,
+				8ABB3941197431E20056B3D8 /* Controller */,
 				8ABB391119742EDC0056B3D8 /* Images.xcassets */,
 				8ABB390E19742EDC0056B3D8 /* disc.xcdatamodeld */,
+				8ABB392719742F640056B3D8 /* resource */,
 				8ABB390A19742EDC0056B3D8 /* Supporting Files */,
 			);
 			path = disc;
@@ -104,6 +140,37 @@
 				8ABB391C19742EDC0056B3D8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8ABB392719742F640056B3D8 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				8A0A3F4D19A3A259003ACFBF /* dsicList.plist */,
+				8ABB392819742F830056B3D8 /* background-gradient.png */,
+				8ABB392919742F830056B3D8 /* background-gradient@2x.png */,
+				8ABB392A19742F830056B3D8 /* background-1739@2x.png */,
+				8ABB392B19742F830056B3D8 /* background-1740@2x.png */,
+				8ABB392C19742F830056B3D8 /* background-1741@2x.png */,
+				8ABB392D19742F830056B3D8 /* button-background.png */,
+				8ABB392E19742F830056B3D8 /* button-background@2x.png */,
+				8ABB392F19742F830056B3D8 /* disc-result-background.png */,
+				8ABB393019742F830056B3D8 /* discbg.png */,
+				8ABB393119742F830056B3D8 /* Defalult@2x.png */,
+				8ABB393219742F830056B3D8 /* discbutton.png */,
+				8ABB393319742F830056B3D8 /* Default.png */,
+			);
+			name = resource;
+			sourceTree = "<group>";
+		};
+		8ABB3941197431E20056B3D8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8ABB39421974323D0056B3D8 /* WelcomeViewController.swift */,
+				8ABB39431974323D0056B3D8 /* WelcomeViewController.xib */,
+				8ABB39461976D10E0056B3D8 /* MainViewController.swift */,
+				8ABB39471976D10E0056B3D8 /* MainViewController.xib */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +252,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABB393919742F830056B3D8 /* button-background.png in Resources */,
+				8ABB39451974323D0056B3D8 /* WelcomeViewController.xib in Resources */,
+				8ABB393619742F830056B3D8 /* background-1739@2x.png in Resources */,
+				8ABB393719742F830056B3D8 /* background-1740@2x.png in Resources */,
 				8ABB391219742EDC0056B3D8 /* Images.xcassets in Resources */,
+				8ABB393E19742F830056B3D8 /* discbutton.png in Resources */,
+				8ABB393B19742F830056B3D8 /* disc-result-background.png in Resources */,
+				8A0A3F4E19A3A259003ACFBF /* dsicList.plist in Resources */,
+				8ABB39491976D10E0056B3D8 /* MainViewController.xib in Resources */,
+				8ABB393819742F830056B3D8 /* background-1741@2x.png in Resources */,
+				8ABB393F19742F830056B3D8 /* Default.png in Resources */,
+				8ABB393519742F830056B3D8 /* background-gradient@2x.png in Resources */,
+				8ABB393C19742F830056B3D8 /* discbg.png in Resources */,
+				8ABB393A19742F830056B3D8 /* button-background@2x.png in Resources */,
+				8ABB393D19742F830056B3D8 /* Defalult@2x.png in Resources */,
+				8ABB393419742F830056B3D8 /* background-gradient.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABB39441974323D0056B3D8 /* WelcomeViewController.swift in Sources */,
 				8ABB391019742EDC0056B3D8 /* disc.xcdatamodeld in Sources */,
 				8ABB390D19742EDC0056B3D8 /* AppDelegate.swift in Sources */,
+				8ABB39481976D10E0056B3D8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +396,7 @@
 				INFOPLIST_FILE = disc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,6 +408,7 @@
 				INFOPLIST_FILE = disc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -381,6 +467,7 @@
 				8ABB392319742EDC0056B3D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8ABB392419742EDC0056B3D8 /* Build configuration list for PBXNativeTarget "discTests" */ = {
 			isa = XCConfigurationList;
@@ -389,6 +476,7 @@
 				8ABB392619742EDC0056B3D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
